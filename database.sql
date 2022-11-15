@@ -26,4 +26,9 @@ values(01,'C:\Users\SAM\photos_projet','2023-01-10','2023-01-30', '2023-02-01','
 (03,'C:\Users\SAM\photos_projet','2023-01-01','2023-01-20', '2023-01-29','jardin@gmail.com'),
 (04,'C:\Users\SAM\photos_projet','2023-01-03','2023-01-26', '2023-02-09','salle.bain@gmail.com');
 
+CREATE User users_concours
+IDENTIFIED BY 'concours2023';
+
+GRANT Select, insert on gedimagination to users_concours;
+
 

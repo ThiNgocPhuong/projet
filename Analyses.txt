@@ -1,0 +1,15 @@
+Analyse des risques :
+- vol de matériel (tablette)
+- perdre le matériel (tablette)
+- avoir accès aux applications
+- fraudes de vol d'informations
+- Ddos
+-- injection du code
+--
+
+
+Solution:
+- protéger le matériel(mettre un antivol, attacher la tablette) 
+- vérouiller la tablette (rendre inaccessbiles les boutons de la tablette
+-- chiffré les informations des participants / protection des API
+--

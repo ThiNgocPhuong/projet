@@ -1,7 +1,7 @@
 <!--
     ANTONOVA & SAM le 17/11/2022
     style.css
-    CSS pour le formulaire du projet de Ged'Imagination
+    HTML/PHP pour le formulaire du projet de Ged'Imagination
 -->
 
 <!DOCTYPE html>

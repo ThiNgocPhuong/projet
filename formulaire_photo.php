@@ -19,27 +19,27 @@
                 <h1>Formulaire de participation</h1>
                 <!--Conteneur du formulaire-->
                     <div id="titre">
-                        <label for="titre">Titre : </label> <br>
+                        <label for="titre">Titre </label> <br>
                         <input type="text" name="titre" id="titre" placeholder="Veuillez écrire le titre de votre réalisation">
                     </div>
                     <div id="description">
-                        <label for="description">Description : </label><br>
+                        <label for="description">Description </label><br>
                         <textarea id="description" name="description" rows="6" placeholder="Veuillez écrire la description de votre réalisation"></textarea>
                     </div>
                     <div id="debut">
-                        <label for="debut">Début de la réalisation : </label> 
+                        <label for="debut">Début de la réalisation </label> 
                         <input type="date" name="debut" id="debut">
                     </div>
                     <div id="fin">
-                        <label for="fin">Fin de la réalisation : </label> 
+                        <label for="fin">Fin de la réalisation </label> 
                         <input type="date" name="fin" id="fin">
                     </div>
                     <div id="photo">
-                        <label for="Photo">Photo : </label> 
+                        <label for="Photo">Photo </label> 
                         <input type="file" id="Photo" accept="image/png, image/jpeg">
                     </div>
                     <div id="date">
-                        <p> Date de participation : 
+                        <p> Participation le
                         <script>
                         date = new Date().toLocaleDateString();
                         document.write(date);

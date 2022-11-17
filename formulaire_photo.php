@@ -1,6 +1,6 @@
 <!--
     ANTONOVA & SAM le 17/11/2022
-    formulaire_photo.php
+    style.css
     HTML/PHP pour le formulaire du projet de Ged'Imagination
 -->
 
@@ -18,23 +18,23 @@
             <form action="traitement.php" method="post">
                 <h1>Formulaire</h1>
                 <!--Conteneur du formulaire-->
-                    <div>
+                    <div id="titre">
                         <label for="titre">Titre : </label> <br>
                         <input type="text" name="titre" id="titre">
                     </div>
-                    <div>
+                    <div id="description">
                         <label for="description">Description : </label><br>
                         <input type="text" name="description" id="description" maxlength="2000">
                     </div>
-                    <div>
+                    <div id="debut">
                         <label for="debut">Début de la réalisation : </label> <br>
                         <input type="date" name="debut" id="debut">
                     </div>
-                    <div>
+                    <div id="fin">
                         <label for="fin">Fin de la réalisation : </label> <br>
                         <input type="date" name="fin" id="fin">
                     </div>
-                    <div>
+                    <div id="photo">
                         <label for="Photo">Photo : </label> <br>
                         <input type="file" id="Photo" accept="image/png, image/jpeg">
                     </div>

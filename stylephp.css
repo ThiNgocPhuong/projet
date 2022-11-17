@@ -8,6 +8,7 @@ body
 {
     background: #403dff;
     text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 h1
@@ -86,6 +87,7 @@ input[type=submit]:hover
 input[type=date]
 {
     font-size: 30px;
+    margin-left: 15px;
 }
 
 div #photo
@@ -101,7 +103,12 @@ div #date
 {
     font-size: 100%;
     margin-top: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     font-weight: 100px;
-    text-align: left;
+    text-align: center;
+}
+
+input[type=file]
+{
+    margin-left: 15px;
 }

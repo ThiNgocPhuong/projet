@@ -31,7 +31,7 @@ h1
     box-shadow: 8px 8px 20px #000000;  
 }
 
-div #titre, div #description, div #debut, div #fin, div #photo, div #date
+div #titre, div #description, div #debut, div #fin
 {
     font-size: 100%;
     margin-top: 10px;
@@ -73,6 +73,7 @@ input[type=submit]
     cursor: pointer;
     width: 70%;
     text-align: center;
+    margin-top: 10px;
 }
 
 input[type=submit]:hover
@@ -85,4 +86,22 @@ input[type=submit]:hover
 input[type=date]
 {
     font-size: 30px;
+}
+
+div #photo
+{
+    font-size: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: 100px;
+    text-align: left;
+}
+
+div #date
+{
+    font-size: 100%;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-weight: 100px;
+    text-align: left;
 }

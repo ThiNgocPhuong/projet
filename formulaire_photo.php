@@ -22,11 +22,11 @@
                 <!--Conteneur du formulaire-->
                     <div id="titre">
                         <label for="titre">Titre </label> <br>
-                        <input type="text" name="titre" id="titre" placeholder="Veuillez écrire le titre de votre réalisation">
+                        <input type="text" name="titre" id="titre" placeholder="Veuillez écrire le titre de votre réalisation" patern="^[\w\s\W]{5,50}$" require>
                     </div>
                     <div id="description">
                         <label for="description">Description </label><br>
-                        <textarea id="description" name="description" rows="6" placeholder="Veuillez écrire la description de votre réalisation"></textarea>
+                        <textarea id="description" name="description" rows="6" placeholder="Veuillez écrire la description de votre réalisation" patern="^[\w\s\W]{10,1000}$" require></textarea>
                     </div>
                     <div id="debut">
                         <label for="debut">Début de la réalisation </label> 

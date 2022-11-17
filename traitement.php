@@ -1,3 +1,10 @@
+<!--
+    ANTONOVA & SAM le 17/11/2022
+    traitement.php
+    HTML/PHP pour le formulaire du projet de Ged'Imagination
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

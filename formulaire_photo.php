@@ -37,6 +37,7 @@
                     <div id="photo">
                         <label for="Photo">Photo </label> 
                         <input type="file" id="Photo" accept="image/png, image/jpeg">
+                        <input type="button" id="removeImage" value="x" class="btn-rmv">
                     </div>
                     <div id="date">
                         <p> Participation le
@@ -52,3 +53,5 @@
         </div>
     </body>
 </html>
+
+

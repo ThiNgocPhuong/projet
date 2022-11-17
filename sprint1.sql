@@ -64,9 +64,9 @@ VALUES
 ('jardin@gmail.com'),
 ('salle.bain@gmail.com');
 
-INSERT INTO Realisation(id_realisation, photo, date_debut_realisation, date_fin_realisation, date_participation, email)
+INSERT INTO Realisation(photo, date_debut_realisation, date_fin_realisation, date_participation, email)
 VALUES
-(01,'C:\Users\SAM\photos_projet','2023-01-10','2023-01-30', '2023-02-01','noble@gmail.com'),
-(02,'C:\Users\SAM\photos_projet','2023-01-10','2023-01-20', '2023-01-30','salle.danse@gmail.com'),
-(03,'C:\Users\SAM\photos_projet','2023-01-01','2023-01-20', '2023-01-29','jardin@gmail.com'),
-(04,'C:\Users\SAM\photos_projet','2023-01-03','2023-01-26', '2023-02-09','salle.bain@gmail.com');
+('C:\Users\SAM\photos_projet','2023-01-10','2023-01-30', '2023-02-01','noble@gmail.com'),
+('C:\Users\SAM\photos_projet','2023-01-10','2023-01-20', '2023-01-30','salle.danse@gmail.com'),
+('C:\Users\SAM\photos_projet','2023-01-01','2023-01-20', '2023-01-29','jardin@gmail.com'),
+('C:\Users\SAM\photos_projet','2023-01-03','2023-01-26', '2023-02-09','salle.bain@gmail.com');

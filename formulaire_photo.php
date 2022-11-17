@@ -1,6 +1,6 @@
 <!--
     ANTONOVA & SAM le 17/11/2022
-    style.css
+    formulaire_photo.php
     HTML/PHP pour le formulaire du projet de Ged'Imagination
 -->
 

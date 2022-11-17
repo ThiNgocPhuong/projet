@@ -1,7 +1,7 @@
 <!--
     ANTONOVA & SAM le 17/11/2022
     style.css
-    CSS pour le formulaire du projet de Ged'Imagination
+    HTML/PHP pour le formulaire du projet de Ged'Imagination
 -->
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
     </head>
     <body>
         <form>
-            <h1>Formulaire</h1>
+            <h1>Formulaire de participation</h1>
             <!--Conteneur du formulaire-->
             <div id="conteneur">
                 <br>
@@ -35,11 +35,11 @@
                 <label for="Photo">Photo : </label> <br>
                 <input type="file" id="Photo" accept="image/png, image/jpeg">
                 <div>
-                    <p> Date de participation :
+                    <p> Date de participation : 
                     <script>
                     date = new Date().toLocaleDateString();
                     document.write(date);
-                    </script>
+                    </script> </p>
                 </div>
                 <br>
                 <input type="button" value="Valider !">

@@ -12,10 +12,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="stylephp.css" rel="stylesheet" type="text/css">
         <title>Formulaire</title>
+        <?php include_once 'db.inc.projet.php'; ?>
+       
     </head>
     <body>
         <div id="conteneur">
-            <form action="traitement.php" method="post">
+            <form action="./insert_projet.php" method="post">
                 <h1>Formulaire de participation</h1>
                 <!--Conteneur du formulaire-->
                     <div id="titre">
@@ -35,9 +37,8 @@
                         <input type="date" name="fin" id="fin">
                     </div>
                     <div id="photo">
-                        <label for="Photo">Photo </label> 
-                        <input type="file" id="Photo" accept="image/png, image/jpeg">
-                        <input type="button" id="removeImage" value="x" class="btn-rmv">
+                        <label for="photo">Photo </label> 
+                        <input type="file" id="photo" name="photo" accept="image/png, image/jpeg">
                     </div>
                     <div id="date">
                         <p> Participation le
@@ -53,5 +54,6 @@
         </div>
     </body>
 </html>
+
 
 

@@ -1,7 +1,7 @@
 <!--
     ANTONOVA & SAM le 17/11/2022
     style.css
-    HTML/PHP pour le formulaire du projet de Ged'Imagination
+    CSS pour le formulaire du projet de Ged'Imagination
 -->
 
 <!DOCTYPE html>
@@ -14,36 +14,34 @@
         <title>Formulaire</title>
     </head>
     <body>
-        <form>
-            <h1>Formulaire de participation</h1>
-            <!--Conteneur du formulaire-->
-            <div id="conteneur">
-                <br>
-                <br>
-                <label for="titre">Titre : </label> <br>
-                <input type="text"  id="titre">
-                <br>
-                <label for="Description">Description : </label> <br>
-                <input type="text"  id="Description" maxlength="2000">
-                <br>
-                <label for="realisationD">Début de la réalisation : </label> <br>
-                <input type="date"  id="realisationD">
-                <br>
-                <label for="realisationF">Fin de la réalisation : </label> <br>
-                <input type="date" id="realisationF">
-                <br>
-                <label for="Photo">Photo : </label> <br>
-                <input type="file" id="Photo" accept="image/png, image/jpeg">
-                <div>
-                    <p> Date de participation : 
-                    <script>
-                    date = new Date().toLocaleDateString();
-                    document.write(date);
-                    </script> </p>
+        <div id="conteneur">
+            <form action="traitement.php" method="post">
+                <h1>Formulaire</h1>
+                <!--Conteneur du formulaire-->
+                    <div>
+                        <label for="titre">Titre : </label> <br>
+                        <input type="text" name="titre" id="titre">
+                    </div>
+                    <div>
+                        <label for="description">Description : </label><br>
+                        <input type="text" name="description" id="description" maxlength="2000">
+                    </div>
+                    <div>
+                        <label for="debut">Début de la réalisation : </label> <br>
+                        <input type="date" name="debut" id="debut">
+                    </div>
+                    <div>
+                        <label for="fin">Fin de la réalisation : </label> <br>
+                        <input type="date" name="fin" id="fin">
+                    </div>
+                    <div>
+                        <label for="Photo">Photo : </label> <br>
+                        <input type="file" id="Photo" accept="image/png, image/jpeg">
+                    </div>
+                        <div class="bouton">
+                        <input type="submit" >
                 </div>
-                <br>
-                <input type="button" value="Valider !">
-            </div>
-        </form>
+            </form>
+        </div>
     </body>
 </html>

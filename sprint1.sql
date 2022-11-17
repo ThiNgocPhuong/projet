@@ -23,7 +23,7 @@ CREATE TABLE Participant
 
 CREATE TABLE Realisation
 (
-    id_realisation INTEGER,
+    id_realisation INTEGER NOT NULL AUTO_INCREMENT,
     photo VARCHAR(45),
     titre_realisation VARCHAR(20),
     date_debut_realisation DATE,

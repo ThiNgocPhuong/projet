@@ -38,6 +38,13 @@
                         <label for="Photo">Photo : </label> <br>
                         <input type="file" id="Photo" accept="image/png, image/jpeg">
                     </div>
+                    <div>
+                        <p> Date de participation : 
+                        <script>
+                        date = new Date().toLocaleDateString();
+                        document.write(date);
+                        </script> </p>
+                    </div>
                         <div class="bouton">
                         <input type="submit" >
                 </div>

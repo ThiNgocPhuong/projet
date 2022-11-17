@@ -20,7 +20,7 @@
                 <!--Conteneur du formulaire-->
                     <div id="titre">
                         <label for="titre">Titre : </label> <br>
-                        <input type="text" name="titre" id="titre" placeholder="Veuillez écrire le titre de votre réalisation" required>
+                        <input type="text" name="titre" id="titre" placeholder="Veuillez écrire le titre de votre réalisation">
                     </div>
                     <div id="description">
                         <label for="description">Description : </label><br>
@@ -28,15 +28,15 @@
                     </div>
                     <div id="debut">
                         <label for="debut">Début de la réalisation : </label> 
-                        <input type="date" name="debut" id="debut" required>
+                        <input type="date" name="debut" id="debut">
                     </div>
                     <div id="fin">
                         <label for="fin">Fin de la réalisation : </label> 
-                        <input type="date" name="fin" id="fin" required>
+                        <input type="date" name="fin" id="fin">
                     </div>
                     <div id="photo">
-                        <label for="Photo">Photo : </label> <br>
-                        <input type="file" id="Photo" accept="image/png, image/jpeg" required>
+                        <label for="Photo">Photo : </label> 
+                        <input type="file" id="Photo" accept="image/png, image/jpeg">
                     </div>
                     <div id="date">
                         <p> Date de participation : 
@@ -45,7 +45,7 @@
                         document.write(date);
                         </script> </p>
                     </div>
-                        <div id="bouton" class="bouton" >
+                        <div id="bouton" class="bouton">
                         <input type="submit" value="Valider !">
                 </div>
             </form>

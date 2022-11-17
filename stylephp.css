@@ -45,6 +45,7 @@ div #titre, div #description, div #debut, div #fin
 {
     font-size: 115% ;
     font-weight: bold;
+    text-align: left;
 }
 
 .button
@@ -54,14 +55,24 @@ div #titre, div #description, div #debut, div #fin
 
 input[type=text]
 {
-    width: 95%;
+    width: 96.5%;
     box-sizing: border-box;
+    padding : 10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.5);
+    border-radius:10px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 textarea
 {
     resize: none;
     width: 94%;
+    padding : 10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.5);
+    border-radius:10px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 input[type=submit]
@@ -86,8 +97,11 @@ input[type=submit]:hover
 
 input[type=date]
 {
-    font-size: 30px;
+    font-size: 40px;
     margin-left: 15px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.3);
+    border-radius:10px;
 }
 
 div #photo
@@ -97,6 +111,7 @@ div #photo
     margin-bottom: 30px;
     font-weight: 100px;
     text-align: left;
+    
 }
 
 div #date
@@ -111,4 +126,9 @@ div #date
 input[type=file]
 {
     margin-left: 15px;
+}
+
+input[id="fin"]
+{
+    margin-left: 42px;
 }

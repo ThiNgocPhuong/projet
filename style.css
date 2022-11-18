@@ -6,7 +6,7 @@
 
 body
 {
-    background: #302dff;
+    background-image: url(back.jpg);
     text-align: center;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -14,7 +14,7 @@ body
 h1
 {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 40px;
     color: #000000;
     text-decoration: underline;
 }
@@ -59,7 +59,7 @@ input[type=text]
     box-sizing: border-box;
     padding : 10px;
     border:0;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.5);
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.3);
     border-radius:10px;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -101,14 +101,14 @@ input[type=date]
     margin-left: 15px;
     border:0;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.3);
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 div #photo
 {
     font-size: 100%;
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-weight: 100px;
     text-align: left;
     

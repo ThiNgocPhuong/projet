@@ -1,0 +1,134 @@
+/*
+    ANTONOVA & SAM le 17/11/2022
+    style.css
+    CSS pour le formulaire du projet de Ged'Imagination
+*/
+
+body
+{
+    background: #302dff;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1
+{
+    text-align: center;
+    margin-top: 50px;
+    color: #000000;
+    text-decoration: underline;
+}
+
+#conteneur
+{
+    border: 3px solid;
+    border-color: rgb(0, 0, 0);
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px 20px 20px 20px;
+    width: 45%;
+    background: #ffffff;
+    box-shadow: 8px 8px 20px #000000;  
+}
+
+div #titre, div #description, div #debut, div #fin
+{
+    font-size: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-weight: 100px;
+    text-align: left;
+}
+
+#conteneur label
+{
+    font-size: 115% ;
+    font-weight: bold;
+    text-align: left;
+}
+
+.button
+{
+    font-size: 150px;
+}
+
+input[type=text]
+{
+    width: 96.5%;
+    box-sizing: border-box;
+    padding : 10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.5);
+    border-radius:10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+textarea
+{
+    resize: none;
+    width: 94%;
+    padding : 10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.5);
+    border-radius:10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input[type=submit]
+{
+    background-color: #000000;
+    color:#ffffff;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 70%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+input[type=submit]:hover
+{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+input[type=date]
+{
+    font-size: 40px;
+    margin-left: 15px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+div #photo
+{
+    font-size: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: 100px;
+    text-align: left;
+    
+}
+
+div #date
+{
+    font-size: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 100px;
+    text-align: center;
+}
+
+input[type=file]
+{
+    margin-left: 15px;
+}
+
+input[id="fin"]
+{
+    margin-left: 42px;
+}

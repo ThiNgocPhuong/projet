@@ -36,7 +36,7 @@
                     </div>
                     <div id="photo">
                         <label for="photo">Photo </label> 
-                        <input type="file" id="photo" name="photo" accept="image/png, image/jpeg">
+                        <input type="file" id="photo" name="photo" accept="image/png, image/jpeg, image/gfifn, image/gif">
                     </div>
                     <div id="date">
                         <p> Participation le
@@ -52,6 +52,3 @@
         </div>
     </body>
 </html>
-
-
-

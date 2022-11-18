@@ -1,11 +1,11 @@
 <?php
     //connextion à la database
-    $user="Participant";
-    $pass="C0nc0urs*";
+    $user="root";
+    $pass="";
 
     try
     {
-        $objetPDO= new PDO('mysql:host=localhost;dbname=GEDIMAGINATION', $user, $pass);
+        $objetPDO= new PDO('mysql:host=localhost;dbname=gedimagination', $user, $pass);
 
         //préparation de la requête
         $requete=$objetPDO->prepare('INSERT INTO Realisation (photo, titre_realisation,description_realisation, date_debut_realisation, date_fin_realisation, date_participation)  VALUES (:photo, :titre, :description, :debut, :fin, :date)');
@@ -40,7 +40,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">

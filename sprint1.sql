@@ -2,21 +2,21 @@ CREATE TABLE Utilisateur
 (
     nom VARCHAR(25),
     prenom VARCHAR(25),
-    email VARCHAR(25),
+    email  VARCHAR(25) unique,
     mdp VARCHAR(30),
     CONSTRAINT pk_utilisateur PRIMARY KEY(email)
 );
 
 CREATE TABLE Gerant
 (
-    email VARCHAR(25),
+    email  VARCHAR(25) unique,
     CONSTRAINT pk_utilisateur PRIMARY KEY(email),
     CONSTRAINT fk_utilisateur_gerant FOREIGN KEY(email) REFERENCES Utilisateur(email)
 );
 
 CREATE TABLE Participant
 (
-    email VARCHAR(25),
+    email  VARCHAR(25) unique,
     CONSTRAINT pk_email PRIMARY KEY(email),
     CONSTRAINT fk_utilisateur_participant FOREIGN KEY(email) REFERENCES Utilisateur(email)
 );
@@ -30,7 +30,7 @@ CREATE TABLE Realisation
     date_fin_realisation DATE,
     description_realisation VARCHAR(100),
     date_participation DATE,
-    email VARCHAR(25),
+    email VARCHAR(25) unique,
     CONSTRAINT pk_id_realisation PRIMARY KEY(id_realisation),
     CONSTRAINT fk_utilisatuer_realisation FOREIGN KEY (email) REFERENCES Utilisateur(email)
 );
@@ -78,11 +78,12 @@ VALUES
 //('C:\Users\ANTONOVA\Projet Ged\photos_projet3','2023-01-01','2023-01-20', '2023-01-29','jardin@gmail.com'),
 //('C:\Users\ANTONOVA\Projet Ged\photos_projet4','2023-01-03','2023-01-26', '2023-02-09','salle.bain@gmail.com');
 
-CREATE user Participant IDENTIFIED by "C0nc0urs*";
-Grant SELECT, INSERT ON gedimagination.Realisation TO Participant;
-Grant SELECT, INSERT ON gedimagination.Utilisateur TO Participant;
+create user Participant IDENTIFIED by "C0nc0urs*";
+Grant Select, insert on gedimagination.Realisation TO Participant;
+Grant Select, insert on gedimagination.Utilisateur TO Participant;
 
-CREATE user Gerant IDENTIFIED BY "Ger@ant2023";
-Grant SELECT, INSERT ON gedimagination.Realisation TO Gerant;
-Grant SELECT, INSERT ON gedimagination.Utilisateur TO Gerant;
-Grant SELECT, INSERT ON gedimagination.Parametre_Concours to Gerant;
+create user Gerant IDENTIFIED BY "Ger@ant2023";
+Grant Select, insert on gedimagination.Realisation TO Gerant;
+Grant Select, insert on gedimagination.Utilisateur TO Gerant;
+Grant Select, insert on gedimagination.Parametre_Concours to Gerant;
+

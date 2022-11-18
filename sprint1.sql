@@ -1,3 +1,5 @@
+create database gedimagination;
+
 CREATE TABLE Utilisateur
 (
     nom VARCHAR(25),

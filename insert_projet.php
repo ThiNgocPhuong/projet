@@ -23,11 +23,11 @@
 
         if($insertValid)
         {
-            $message = 'Votre formulaire a été valider .';
+            $message = 'Votre formulaire a été validé.';
         }
         else
         {
-            $message = 'L envoie de votre formulaire a échouer .';
+            $message = 'L\'envoi de votre formulaire a échoué.';
         }
     }
     catch (PDOException $a)
@@ -43,12 +43,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <link href="style_insert.css" rel="stylesheet" type="text/css">
+    <title>Validation du formulaire</title>
 </head>
 <body>
-    <!-- affiche le message de reussite ou echec -->
-    <h1>Insertion des contacts</h1>
-    <p><?php echo $message ?></p>
-    <a href="formulaire_photo.php">Retour</a>
+    <div id="affichage">
+        <!-- affiche le message de reussite ou echec -->
+        <h1>Insertion des contacts</h1>
+        <p><?php echo $message ?></p>
+        <div id="bouton" class="bouton">
+                <a href="formulaire_photo.php" >
+                    <button>Retour</button>
+                </a>
+        </div>
+    </div>
 </body>
 </html>

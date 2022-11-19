@@ -2,6 +2,7 @@
     ANTONOVA & SAM le 17/11/2022
     traitement.php
     HTML/PHP pour le formulaire du projet de Ged'Imagination
+    Teste de récupération de donnée.
 -->
 
 
@@ -35,6 +36,7 @@
        }
        ?>
        
+        ////Affichage des données
        <div id="conteneur01">
             <p><strong>Titre :</strong> <?php echo $titre; ?></p>
             <p><strong>Description:</strong> <?php echo $description; ?></p>

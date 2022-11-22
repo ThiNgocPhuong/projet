@@ -18,37 +18,48 @@
             <form action="./insert_projet.php" method="post">
                 <h1>Formulaire de participation</h1>
                 <!--Conteneur du formulaire-->
+                <!--Titre de réalisation-->
                     <div id="titre">
                         <label for="titre">Titre </label> <br>
                         <input type="text" name="titre" id="titre" placeholder="Veuillez écrire le titre de votre réalisation" patern="^[\w\s\W]{5,50}$" require>
                     </div>
+                    <!--Description de réalisation-->
                     <div id="description">
                         <label for="description">Description </label><br>
                         <textarea id="description" name="description" rows="6" placeholder="Veuillez écrire la description de votre réalisation" patern="^[\w\s\W]{10,1000}$" require></textarea>
                     </div>
+                    <!--Date de début de réalisation-->
                     <div id="debut">
                         <label for="debut">Début de la réalisation </label> 
                         <input type="date" name="debut" id="debut">
                     </div>
+                    <!--Date de fin de réalisation-->
                     <div id="fin">
                         <label for="fin">Fin de la réalisation </label> 
                         <input type="date" name="fin" id="fin">
                     </div>
+                    <!--Photo à transmettre-->
                     <div id="photo">
                         <label for="photo">Photo </label> 
-                        <input type="file" id="photo" name="photo" accept="image/png, image/jpeg, image/gfifn, image/gif">
+                        <input type="file" id="file" name="photo" accept="image/png, image/jpeg" required/>
                     </div>
+                    <!--Date de participation-->
                     <div id="date">
                         <p> Participation le
-                        <script>
+                        <!--JavaScript-->
+                        <script> 
                         date = new Date().toLocaleDateString();
                         document.write(date);
                         </script> </p>
                     </div>
+                    <!--Bouton pour envoyer le formulaire-->
                         <div id="bouton" class="bouton">
                         <input type="submit" value="Valider !">
                 </div>
             </form>
         </div>
     </body>
+    <script src="./poids_photo.js"></script>
 </html>
+
+

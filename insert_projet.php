@@ -59,15 +59,3 @@
     </div>
 </body>
 </html>
-
-<!--JavaScript pour le poids de l'image-->
-<script>
-    var uploadField = document.getElementById("photo");
-
-uploadField.onchange = function() {
-    if(this.files[0].size > 10485760){  // sa vaut 10 Mo
-       alert("Le fichier est trop volumineux!");
-       this.value = "";
-    };
-};
-</script>

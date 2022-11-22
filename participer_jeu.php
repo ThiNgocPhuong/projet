@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id="participation">
-            <h1>Allez y! <br> Faites nous voir votre réalisation.</h1>
+            <h1>Allez-y! <br> Faites nous voir votre réalisation.</h1>
             <div id="participer" class="bouton">
                 <a href="formulaire_photo.php"> 
                   <button> Participer Au Jeu </button> 

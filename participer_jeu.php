@@ -14,8 +14,12 @@
         <title>Participation au jeu</title>
     </head>
     <body>
+       
         <div id="participation">
             <h1>Allez y! <br> Faites nous voir votre réalisation.</h1>
+            <div id="message">
+               <p> <?php $message ?></p>
+            </div>
             <div id="participer" class="bouton" >
                 <a href="formulaire_photo.php"> 
                   <button id="bouton"> Participer Au Jeu </button> 
@@ -23,18 +27,6 @@
             </div>
         </div>
     </body> 
-    <script>
-      var participe = document.getElementById("bouton")
+    <script src="./patern_periode.js"></script>
 
-        participe.onclick = function (){
-        var debut= new Date(2023,1,09);
-        var fin=new Date(2023,2,12);
-        if(Date.now() < debut){
-            alert("Le concours n'a pas encore commencer !");
-        } else{
-            if(Date.now() > fin)
-            alert("Le concours est terminer !");
-        }
-        };
-    </script>
 </html>

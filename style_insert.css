@@ -1,3 +1,11 @@
+/*
+    ANTONOVA & SAM le 17/11/2022
+    style.css
+    CSS pour la confirmation du formulaire du projet de Ged'Imagination
+*/
+
+
+/* Le body derrière la confirmation du formulaire */
 body
 {
     background-image: url(back.jpg);
@@ -5,6 +13,8 @@ body
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+
+/* Le titre */
 h1
 {
     text-align: center;
@@ -12,6 +22,8 @@ h1
     color: #000000;
     text-decoration: underline;
 }
+
+/* Affichage des messages si le formulaire et la photo ont été validées */
 #affichage
 {
     border: 3px solid;
@@ -25,6 +37,7 @@ h1
     box-shadow: 8px 8px 20px #000000;  
 }
 
+/* Le bouton pour retourner sur la page du formulaire */
 button
 {
     background-color: #000000;

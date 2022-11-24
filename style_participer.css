@@ -1,3 +1,10 @@
+/*
+    ANTONOVA & SAM le 17/11/2022
+    style.css
+    CSS pour la participation au jeu du projet de Ged'Imagination
+*/
+
+/* Le body avec une image derrière le bouton de valdation de participation au jeu */
 body
 {
     background-image: url(back.jpg);
@@ -5,14 +12,17 @@ body
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+/* Le titre */
 h1
 {
     text-align: center;
     margin-top: 40px;
     color: #000000;
     text-decoration: underline;
+    font-size: 190%;
 }
 
+/* Le titre par l'id */
 #participation
 {
     border: 3px solid;
@@ -27,6 +37,7 @@ h1
     box-shadow: 8px 8px 20px #000000;  
 }
 
+/* Buton pour essayer de participer au jeu */
 button
 {
     background-color: #000000;
@@ -39,6 +50,7 @@ button
     text-align: center;
 }
 
+/* Le style du buton dès qu'on mets la souris dessus */
 button:hover
 {
     background-color: #ffffff;

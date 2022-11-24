@@ -1,7 +1,16 @@
+<!--
+    ANTONOVA & SAM le 17/11/2022
+    style.css
+    CSS pour la participation au jeu du projet de Ged'Imagination
+-->
+
 <?php
-    //connextion à la database
+    //connexion à la database
     $user="root";
     $pass="";
+
+    //variable message - pour l'afficher
+    $mes="";
 
     //Vérification si le formulaire a été soumis
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -27,8 +36,8 @@
                     echo $_FILES["photo"]["name"] . " existe déjà.";
                     }
                     else {
-                        move_uploaded_file($_FILES["photo"]["tmp_name"], "C:\laragon\www\projet\photos/" . $_FILES["photo"]["name"]);
-                        echo "Votre image a été télérchagée avec succès";
+                        move_uploaded_file($_FILES["photo"]["tmp_name"], "C:\laragon\www\Ged/photos/" . $_FILES["photo"]["name"]);
+                        echo $mes="Votre image a été télérchagée avec succès.";
                     }
             } else {
                 echo "Error: Il y a eu un problème de téléchargement de votre image. Veuillez réesayer!";
@@ -71,6 +80,8 @@
     }
 
 ?>
+
+<!-- La page qui s'affiche une fois qu'on a validé le formulaire -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -84,7 +95,9 @@
     <div id="affichage">
         <!-- Affiche le message de reussite ou echec -->
         <h1>Confirmation du formulaire</h1>
-        <p><?php echo $message ?></p>
+        <!-- Affichage des messages appelés -->
+        <p><?php echo $mes ?> <br> <br> <?php echo $message ?> </p>
+        <!-- Bouton qui retourne vers la page du formulaire -->
         <div id="bouton" class="bouton">
                 <a href="formulaire_photo.php" >
                     <button>Retour</button>
@@ -93,5 +106,3 @@
     </div>
 </body>
 </html>
-
-

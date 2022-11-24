@@ -15,12 +15,26 @@
     </head>
     <body>
         <div id="participation">
-            <h1>Allez-y! <br> Faites nous voir votre réalisation.</h1>
-            <div id="participer" class="bouton">
+            <h1>Allez y! <br> Faites nous voir votre réalisation.</h1>
+            <div id="participer" class="bouton" >
                 <a href="formulaire_photo.php"> 
-                  <button> Participer Au Jeu </button> 
+                  <button id="bouton"> Participer Au Jeu </button> 
                 </a>
             </div>
         </div>
-    </body>
+    </body> 
+    <script>
+      var participe = document.getElementById("bouton")
+
+        participe.onclick = function (){
+        var debut= new Date(2023,1,09);
+        var fin=new Date(2023,2,12);
+        if(Date.now() < debut){
+            alert("Le concours n'a pas encore commencer !");
+        } else{
+            if(Date.now() > fin)
+            alert("Le concours est terminer !");
+        }
+        };
+    </script>
 </html>

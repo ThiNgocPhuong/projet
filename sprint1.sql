@@ -81,11 +81,11 @@ VALUES
 //('C:\Users\ANTONOVA\Projet Ged\photos_projet4','2023-01-03','2023-01-26', '2023-02-09','salle.bain@gmail.com');
 
 create user Participant IDENTIFIED by "C0nc0urs*";
-Grant Select, insert on gedimagination.Realisation TO Participant;
-Grant Select, insert on gedimagination.Utilisateur TO Participant;
+grant select, insert on gedimagination.Realisation to Participant;
+grant select, insert on gedimagination.Utilisateur to Participant;
 
 create user Gerant IDENTIFIED BY "Ger@ant2023";
-Grant Select, insert on gedimagination.Realisation TO Gerant;
-Grant Select, insert on gedimagination.Utilisateur TO Gerant;
-Grant Select, insert on gedimagination.Parametre_Concours to Gerant;
+grant select, insert on gedimagination.Realisation to Gerant;
+grant select, insert on gedimagination.Utilisateur to Gerant;
+grant select, insert on gedimagination.Parametre_Concours to Gerant;
 

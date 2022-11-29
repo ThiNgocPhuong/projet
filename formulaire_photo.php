@@ -21,22 +21,22 @@
                 <!--Titre de réalisation-->
                     <div id="titre">
                         <label for="titre">Titre </label> <br>
-                        <input type="text" name="titre" id="titre" placeholder="Veuillez écrire le titre de votre réalisation" patern="^[\w\s\W]{5,50}$" require>
+                        <input type="text" name="titre" id="titre" placeholder="Veuillez écrire le titre de votre réalisation" pattern="^[\w\s\W]{5,10}$" required>
                     </div>
                     <!--Description de réalisation-->
                     <div id="description">
                         <label for="description">Description </label><br>
-                        <textarea id="description" name="description" rows="6" placeholder="Veuillez écrire la description de votre réalisation" patern="^[\w\s\W]{10,1000}$" require></textarea>
+                        <textarea id="description" name="description" rows="6" placeholder="Veuillez écrire la description de votre réalisation" pattern="^[\w\s\W]{10,1000}$" required></textarea>
                     </div>
                     <!--Date de début de réalisation-->
                     <div id="debut">
                         <label for="debut">Début de la réalisation </label> 
-                        <input type="date" name="debut" id="debut">
+                        <input type="date" name="debut" id="debut" required>
                     </div>
                     <!--Date de fin de réalisation-->
                     <div id="fin">
                         <label for="fin">Fin de la réalisation </label> 
-                        <input type="date" name="fin" id="fin">
+                        <input type="date" name="fin" id="fin" required>
                     </div>
                     <!--Photo à transmettre-->
                     <div id="photo">

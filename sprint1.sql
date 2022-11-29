@@ -85,7 +85,6 @@ grant select, insert on gedimagination.Realisation to Participant;
 grant select, insert on gedimagination.Utilisateur to Participant;
 
 create user Gerant IDENTIFIED BY "Ger@ant2023";
-grant select, insert on gedimagination.Realisation to Gerant;
 grant select, insert on gedimagination.Utilisateur to Gerant;
 grant select, insert on gedimagination.Parametre_Concours to Gerant;
 

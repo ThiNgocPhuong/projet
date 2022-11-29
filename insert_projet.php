@@ -29,25 +29,24 @@
             $maxsize = 9 * 2048 * 1536;
             if($filesize > $maxsize) die("Error : La taille du fichier est supérieure à la taille autorisée.");
 
-            $exten=substr($filetype,6);
+            $exten=substr($filetype,6); 
             $filename=uniqid();
             $nom_fichier=$filename .".". $exten;
-
             //Vérification du type - MIME de la photo
             if(in_array($filetype, $allowed)){
                 //Vérification de l'existense de la photo avant de la télécharger
-                if(file_exists("C:\laragon\www\projet\photos/" . $_FILES["photo"]["name"])){
-                    echo $_FILES["photo"]["name"] . " existe déjà.";
+                if(file_exists(".\photos/" .$filename)){
+                    $mes= $_FILES["photo"]["name"] . " existe déjà.";
                     }
                     else {
-                        move_uploaded_file($_FILES["photo"]["tmp_name"], "C:\laragon\www\Ged/photos/" . "{$nom_fichier}");
+                        move_uploaded_file($_FILES["photo"]["tmp_name"], ".\photos/" . "{$nom_fichier}");
                         $mes="Votre image a été télérchagée avec succès.";
                     }
             } else {
-                echo "Error: Il y a eu un problème de téléchargement de votre image. Veuillez réesayer!";
+                $mes= "Error: Il y a eu un problème de téléchargement de votre image. Veuillez réesayer!";
             }
         } else {
-            echo "Error: " . $_FILES["photo"]["error"];
+            $mes= "Error: " . $_FILES["photo"]["error"];
         }
     }
 
@@ -64,7 +63,7 @@
         $requete->bindValue(':debut', $_POST['debut'], PDO::PARAM_STR);
         $requete->bindValue(':fin', $_POST['fin'], PDO::PARAM_STR);
         $requete->bindValue(':date', date("Y-m-d"));  
-        $requete->bindValue(':chemin','\www\Ged\photos\\' .$nom_fichier, PDO::PARAM_STR);
+        $requete->bindValue(':chemin','\www\projet\photos\\' .$nom_fichier, PDO::PARAM_STR);
 
         //exécution de la requette préparer
         $insertValid = $requete->execute();
@@ -104,7 +103,7 @@
         <p><?php echo $mes ?> <br> <br> <?php echo $message ?> </p>
         <!-- Bouton qui retourne vers la page du formulaire -->
         <div id="bouton" class="bouton">
-                <a href="formulaire_photo.php" >
+                <a href="participer_jeu.php" >
                     <button>Retour</button>
                 </a>
         </div>

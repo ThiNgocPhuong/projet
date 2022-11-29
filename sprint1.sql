@@ -80,11 +80,11 @@ VALUES
 //('C:\Users\ANTONOVA\Projet Ged\photos_projet3','2023-01-01','2023-01-20', '2023-01-29','jardin@gmail.com'),
 //('C:\Users\ANTONOVA\Projet Ged\photos_projet4','2023-01-03','2023-01-26', '2023-02-09','salle.bain@gmail.com');
 
-create user Participant IDENTIFIED by "C0nc0urs*";
-grant select, insert on gedimagination.Realisation to Participant;
-grant select, insert on gedimagination.Utilisateur to Participant;
+create user Participation IDENTIFIED by "C0nc0urs*";
+grant select, insert on gedimagination.Realisation to Participation;
+grant select, insert on gedimagination.Utilisateur to Participation;
 
-create user Gerant IDENTIFIED BY "Ger@ant2023";
-grant select, insert on gedimagination.Utilisateur to Gerant;
-grant select, insert on gedimagination.Parametre_Concours to Gerant;
+create user Gestion IDENTIFIED BY "Ger@ant2023";
+grant select, insert on gedimagination.Utilisateur to Gestion;
+grant select, insert on gedimagination.Parametre_Concours to Gestion;
 

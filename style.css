@@ -48,6 +48,7 @@ div #titre, div #description, div #debut, div #fin
 /* Que les labels du conteneur */
 #conteneur label
 {
+    position: relative;
     font-size: 115% ;
     font-weight: bold;
     text-align: left;
@@ -95,6 +96,7 @@ input[type=submit]
     width: 70%;
     text-align: center;
     margin-top: 10px;
+    border-radius: 10px;
 }
 
 /* Le buton - quel effet a-t-il quand on mets la souris dessus */
@@ -120,7 +122,7 @@ div #photo
 {
     font-size: 100%;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-weight: 100px;
     text-align: left;
 }
@@ -145,4 +147,11 @@ input[type=file]
 input[id="fin"]
 {
     margin-left: 42px;
+}
+
+div #infos
+{
+    font-size: 80%;
+    text-align: left;
+    margin-top: 5px;
 }

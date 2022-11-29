@@ -1,8 +1,10 @@
 <?php
 
     //connexion à la base de données
-    $user = 'Participant';
+    $user = 'Participation';
     $password = 'C0nc0urs';
+
+    $email="oble@gmail.com";
 
     try
 
@@ -11,9 +13,13 @@
 
         //préparation de la reqête SELECT
         $pdoStat = $objetPDO->prepare('SELECT count(id_realisation) as "nb_mail" from Realisation where email= :email_participant' );
-        $pdoStat->bindValue(":email_participant","oble@gmail.com",PDO::PARAM_STR);
+        $pdoStat->bindValue(":email_participant",$email,PDO::PARAM_STR);
         $pdoStat->execute();
         $res = $pdoStat->fetch(PDO::FETCH_ASSOC);
+
+        /*$requestU = $objetPDO->prepare('INSERT INTO ( email ) VALUES (:email_participant)');
+        $requestU->bindValue(':email_participant',$email,PDO::PARAM_STR);
+        $requestU->execute();*/
 
         //éxécution
         
@@ -23,7 +29,7 @@
         }
         else
         {
-            $message = "Vous avez déjà participé";
+            $message = "Vous avez déjà participé !";
         }
     }
     catch (PDOException $e)

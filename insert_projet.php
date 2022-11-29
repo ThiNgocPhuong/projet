@@ -29,6 +29,10 @@
             $maxsize = 9 * 2048 * 1536;
             if($filesize > $maxsize) die("Error : La taille du fichier est supérieure à la taille autorisée.");
 
+            $exten=substr($filetype,6);
+            $filename=uniqid();
+            $nom_fichier=$filename .".". $exten;
+
             //Vérification du type - MIME de la photo
             if(in_array($filetype, $allowed)){
                 //Vérification de l'existense de la photo avant de la télécharger
@@ -36,8 +40,8 @@
                     echo $_FILES["photo"]["name"] . " existe déjà.";
                     }
                     else {
-                        move_uploaded_file($_FILES["photo"]["tmp_name"], "C:\laragon\www\Ged/photos/" . $_FILES["photo"]["name"]);
-                        echo $mes="Votre image a été télérchagée avec succès.";
+                        move_uploaded_file($_FILES["photo"]["tmp_name"], "C:\laragon\www\Ged/photos/" . "{$nom_fichier}");
+                        $mes="Votre image a été télérchagée avec succès.";
                     }
             } else {
                 echo "Error: Il y a eu un problème de téléchargement de votre image. Veuillez réesayer!";
@@ -52,7 +56,7 @@
         $objetPDO= new PDO('mysql:host=localhost;dbname=gedimagination', $user, $pass);
 
         //préparation de la requête
-        $requete=$objetPDO->prepare('INSERT INTO Realisation ( titre_realisation,description_realisation, date_debut_realisation, date_fin_realisation, date_participation)  VALUES ( :titre, :description, :debut, :fin, :date)');
+        $requete=$objetPDO->prepare('INSERT INTO Realisation ( titre_realisation,description_realisation, date_debut_realisation, date_fin_realisation, date_participation, photo)  VALUES ( :titre, :description, :debut, :fin, :date, :chemin)');
 
         //liaison de chaque valeur
         $requete->bindValue(':titre', $_POST['titre'], PDO::PARAM_STR);
@@ -60,6 +64,7 @@
         $requete->bindValue(':debut', $_POST['debut'], PDO::PARAM_STR);
         $requete->bindValue(':fin', $_POST['fin'], PDO::PARAM_STR);
         $requete->bindValue(':date', date("Y-m-d"));  
+        $requete->bindValue(':chemin','\www\Ged\photos\\' .$nom_fichier, PDO::PARAM_STR);
 
         //exécution de la requette préparer
         $insertValid = $requete->execute();

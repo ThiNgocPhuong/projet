@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ged\'Imagination</string>
+    <string name="libImporter">IMPORTER</string>
+    <string name="libExporter">EXPORTER</string>
+</resources>

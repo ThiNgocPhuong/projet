@@ -8,6 +8,6 @@ if(test < debut){
 } else{
     if(test > fin)
     participe.disabled = true;
-
 }
 
+ 

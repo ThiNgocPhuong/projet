@@ -1,4 +1,5 @@
 package com.example.gedimagination;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.Cursor;
@@ -14,4 +15,16 @@ public class ConcoursDAO {
     }
 
 
+    public void ajouterRealisation(Realisation r) {
+
+            //création d'un ContentValues
+            ContentValues v = new ContentValues();
+            // ajout des propriétés au ContentValues
+            v.put("id", r.getId());
+            v.put("titre", r.getTitre());
+            v.put("description", r.getDescription());
+            // ajout du concurrent dans la table
+            maBase.insert("Realisation", null, v);
+
+    }
 }

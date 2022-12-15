@@ -12,9 +12,9 @@ public class ConcoursHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE Realisation ("
-                + "id REAL NOT NULL,"
-                + "vote REAL NOT NULL,"
-                + "photo TEXT NOT NULL);");
+                + "id TEXT NOT NULL,"
+                + "titre TEXT NOT NULL, "
+                + "description TEXT NOT NULL);");
     }
 
     @Override

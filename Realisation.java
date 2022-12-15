@@ -4,6 +4,8 @@ public class Realisation {
     private String id;
     private String titre;
     private String description;
+    private String debut;
+    private String fin;
 
     public Realisation() {
         this.id="";
@@ -23,6 +25,14 @@ public class Realisation {
         return description;
     }
 
+    public String getDebut(){
+        return debut;
+    }
+
+    public String getFin(){
+        return fin;
+    }
+
     public void setId(String id) {
         this.id=id;
     }
@@ -35,12 +45,18 @@ public class Realisation {
         this.description=description;
     }
 
+    public void setDebut(String debut){this.debut=debut;}
+
+    public void setFin(String fin){this.fin=fin;}
+
     @Override
     public String toString() {
         return "Concurrent{" +
                 "id='" + id + '\'' +
                 ", titre='" + titre+ '\'' +
-                ", description='" + description +
+                ", description='" + description +'\'' +
+                ", debut='" + debut + '\'' +
+                ", fin='" + fin +
                 '}';
     }
 }

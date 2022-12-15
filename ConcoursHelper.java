@@ -14,7 +14,9 @@ public class ConcoursHelper extends SQLiteOpenHelper{
         db.execSQL("CREATE TABLE Realisation ("
                 + "id TEXT NOT NULL,"
                 + "titre TEXT NOT NULL, "
-                + "description TEXT NOT NULL);");
+                + "description TEXT NOT NULL,"
+                +"debut TEXT NOT NULL,"
+                +"fin TEXT NOT NULL);");
     }
 
     @Override

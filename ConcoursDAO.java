@@ -14,15 +14,22 @@ public class ConcoursDAO {
         maBase = monHelper.getWritableDatabase();
     }
 
+    public void supprimerTous(){
+        maBase.delete("realisation", null, null);
+    }
 
     public void ajouterRealisation(Realisation r) {
 
             //création d'un ContentValues
             ContentValues v = new ContentValues();
+
             // ajout des propriétés au ContentValues
             v.put("id", r.getId());
             v.put("titre", r.getTitre());
             v.put("description", r.getDescription());
+            v.put("debut",r.getDebut());
+            v.put("fin", r.getFin());
+
             // ajout du concurrent dans la table
             maBase.insert("Realisation", null, v);
 

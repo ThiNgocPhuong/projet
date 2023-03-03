@@ -82,11 +82,15 @@ public class MainActivity extends AppCompatActivity {
 
                                     Log.i("info", R.toString());
                                     bdd.ajouterRealisation(R);
+                                    Intent Vote = new Intent(MainActivity.this, Vote.class);
+                                    startActivity(Vote);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
                             }
                             Toast.makeText(getApplicationContext(), "Imporation terminée", Toast.LENGTH_LONG).show();
+
+
                         }
 
                         @Override

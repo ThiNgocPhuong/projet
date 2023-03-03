@@ -34,4 +34,9 @@ public class ConcoursDAO {
             maBase.insert("Realisation", null, v);
 
     }
+
+    public Cursor toutLesId(){
+        Cursor curseurId = maBase.rawQuery("SELECT id_realisation FROM Realisation", new String[] {});
+        return curseurId;
+    }
 }

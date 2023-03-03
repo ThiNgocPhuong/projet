@@ -33,6 +33,7 @@ public class Realisation {
         return fin;
     }
 
+
     public void setId(String id) {
         this.id=id;
     }
@@ -49,6 +50,7 @@ public class Realisation {
 
     public void setFin(String fin){this.fin=fin;}
 
+
     @Override
     public String toString() {
         return "Concurrent{" +
@@ -56,7 +58,8 @@ public class Realisation {
                 ", titre='" + titre+ '\'' +
                 ", description='" + description +'\'' +
                 ", debut='" + debut + '\'' +
-                ", fin='" + fin +
+                ", fin='" + fin +'\''+
+                ", vote='" +
                 '}';
     }
 }

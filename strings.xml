@@ -3,5 +3,9 @@
     <string name="libImporter">IMPORTER</string>
     <string name="libExporter">EXPORTER</string>
     <string name="realisation">Réalisation</string>
-    <string name="valide">Voter !</string>
+    <string name="valide">Voter</string>
+    <string name="ticket">Code</string>
+    <string name="email">Email</string>
+    <string name="condition">J\'accepte que mes données soient stockées et utilisées le temps du concours </string>
+    <string name="btnVote">Commencer à voter</string>
 </resources>

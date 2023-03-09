@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginTop="35dp"
+    android:theme="@style/Theme.GedVote"
+    android:background="@drawable/background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,6 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/ticket"
+            android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <EditText
             android:id="@+id/ticket"
@@ -35,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/email"
+            android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         <EditText
             android:id="@+id/email"
@@ -47,7 +52,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="15dp"
         android:orientation="horizontal">
         <CheckBox
             android:id="@+id/condition"
@@ -57,20 +62,16 @@
 
         </CheckBox>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/btnVote"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:text="@string/btnVote"
-            android:layout_margin="20dp"
-            android:textSize="30sp"/>
-    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnVote"
+        android:layout_width="350dp"
+        android:layout_height="61dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:text="@string/btnVote"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="23dp"
+        android:textStyle="bold" />
 
 </LinearLayout>

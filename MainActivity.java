@@ -82,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
 
                                     Log.i("info", R.toString());
                                     bdd.ajouterRealisation(R);
-                                    Intent Vote = new Intent(MainActivity.this, Vote.class);
-                                    startActivity(Vote);
+                                    Intent Connexion = new Intent(MainActivity.this, Connexion.class);
+                                    startActivity(Connexion);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }

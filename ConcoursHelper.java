@@ -17,11 +17,20 @@ public class ConcoursHelper extends SQLiteOpenHelper{
                 + "description TEXT NOT NULL,"
                 +"debut TEXT NOT NULL,"
                 +"fin TEXT NOT NULL);");
+
+        db.execSQL("CREATE TABLE Vote("
+                + "code TEXT NOT NULL,"
+                + "email TEXT NOT NULL,"
+                + "vote1 INTEGER NOT NULL,"
+                + "vote2 INTEGER NOT NULL,"
+                + "vote3 INTEGER NOT NULL);");
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
         db.execSQL("DROP TABLE IF EXISTS Realisation");
+        db.execSQL("DROP TABLE IF EXISTS Vote");
         onCreate(db);
     }
 

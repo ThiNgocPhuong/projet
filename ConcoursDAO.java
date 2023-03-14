@@ -34,9 +34,12 @@ public class ConcoursDAO {
             maBase.insert("Realisation", null, v);
 
     }
+    public void ajouterVote(Vote v){
+
+    }
 
     public Cursor toutLesId(){
-        Cursor curseurId = maBase.rawQuery("SELECT id_realisation FROM Realisation", new String[] {});
+        Cursor curseurId = maBase.rawQuery("SELECT id FROM Realisation", new String[] {});
         return curseurId;
     }
 }

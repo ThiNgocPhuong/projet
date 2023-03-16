@@ -1,49 +1,48 @@
 package com.example.gedimagination;
 
-import androidx.appcompat.app.AppCompatActivity;
+public class Vote {
+    private String code;
+    private String email;
+    private int vote1;
+    private int vote2;
+    private int vote3;
 
-import android.annotation.SuppressLint;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Spinner;
+    public Vote(){
+        this.code="";
+        this.email="";
+        this.vote1=0;
+        this.vote2=0;
+        this.vote3=0;
+    }
 
-import java.util.ArrayList;
+    public String getCode(){return this.code;}
 
-public class Vote extends AppCompatActivity {
-    private ConcoursDAO bdd;
-    private ArrayList<String> lesId = new ArrayList<String>();
-    Spinner spinnerVote1 = null;
-    Spinner spinnerVote2 = null;
-    Spinner spinnerVote3 = null;
+    public String getEmail(){return this.email;}
 
+    public int getVote1(){return this.vote1;}
+
+    public int getVote2(){return this.vote2;}
+
+    public int getVote3(){return this.vote3;}
+
+    public void setCode(String code){this.code=code;}
+
+    public void setEmail(String email){this.email=email;}
+
+    public void setVote1(int vote1){this.vote1=vote1;}
+
+    public void setVote2(int vote2){this.vote2=vote2;}
+
+    public void setVote3(int vote3){this.vote3=vote3;}
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vote);
-
-        spinnerVote1 = (Spinner) findViewById(R.id.vote1);
-        spinnerVote2 = (Spinner) findViewById(R.id.vote2);
-        spinnerVote3 = (Spinner) findViewById(R.id.vote3);
-
-        chargerSpinner();
+    public String toString(){
+        return "Vote{"+
+                "code'" + code + '\''+
+                ", email'"+ email + '\''+
+                ", vote1'"+ vote1 + '\'' +
+                ", vote2'"+ vote2 + '\'' +
+                ", vote3'"+ vote3 +
+                "}";
     }
-    public void chargerSpinner(){
-        bdd = new ConcoursDAO(this);
-        Cursor cursorTous =  bdd.toutLesId();
-        lesId.clear();
-        for(cursorTous.moveToFirst(); !cursorTous.isAfterLast(); cursorTous.moveToNext()){
-            @SuppressLint("Range")
-                    String id = cursorTous.getString(cursorTous.getColumnIndex("id"));
-            lesId.add(id);
-        }
-        spinnerVote1.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,lesId));
-        spinnerVote2.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,lesId));
-        spinnerVote3.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,lesId));
-
-    }
-
 }

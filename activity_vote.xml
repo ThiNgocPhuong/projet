@@ -37,10 +37,12 @@
 
         <Spinner
             android:id="@+id/vote1"
-            android:layout_width="171dp"
+            android:layout_width="124dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="2"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="150dp"
             android:choiceMode="singleChoice"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
     </LinearLayout>
@@ -108,8 +110,10 @@
             android:id="@+id/vote2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="2"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="150dp"
             android:choiceMode="singleChoice"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
     </LinearLayout>
@@ -177,8 +181,10 @@
             android:id="@+id/vote3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="2"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="150dp"
             android:choiceMode="singleChoice"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
     </LinearLayout>

@@ -35,7 +35,18 @@ public class ConcoursDAO {
 
     }
     public void ajouterVote(Vote v){
+        ContentValues c =  new ContentValues();
 
+        c.put("code", v.getCode());
+        c.put("email", v.getEmail());
+        c.put("id1", v.getId1());
+        c.put("vote1",v.getVote1());
+        c.put("id2",v.getId2());
+        c.put("vote2",v.getVote2());
+        c.put("id3",v.getId3());
+        c.put("vote3",v.getVote3());
+
+        maBase.insert("Vote", null,c);
     }
 
     public Cursor toutLesId(){

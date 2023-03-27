@@ -21,8 +21,11 @@ public class ConcoursHelper extends SQLiteOpenHelper{
         db.execSQL("CREATE TABLE Vote("
                 + "code TEXT NOT NULL,"
                 + "email TEXT NOT NULL,"
+                + "id1 TEXT NOT NULL,"
                 + "vote1 INTEGER NOT NULL,"
+                + "id2 TEXT NOT NULL,"
                 + "vote2 INTEGER NOT NULL,"
+                + "id3 TEXT NOT NULL,"
                 + "vote3 INTEGER NOT NULL);");
     }
 

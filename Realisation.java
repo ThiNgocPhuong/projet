@@ -7,6 +7,7 @@ public class Realisation {
     private String debut;
     private String fin;
 
+
     public Realisation() {
         this.id="";
         this.titre="";
@@ -33,7 +34,7 @@ public class Realisation {
         return fin;
     }
 
-
+    
     public void setId(String id) {
         this.id=id;
     }
@@ -50,16 +51,18 @@ public class Realisation {
 
     public void setFin(String fin){this.fin=fin;}
 
+    /*public void setGM(int GM){
+        this.GM=GM;
+    }*/
 
     @Override
     public String toString() {
-        return "Concurrent{" +
+        return "Realisation{" +
                 "id='" + id + '\'' +
                 ", titre='" + titre+ '\'' +
                 ", description='" + description +'\'' +
                 ", debut='" + debut + '\'' +
-                ", fin='" + fin +'\''+
-                ", vote='" +
+                ", fin='" + fin +
                 '}';
     }
 }

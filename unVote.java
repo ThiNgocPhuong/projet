@@ -32,8 +32,8 @@ public class unVote extends AppCompatActivity {
     RadioGroup note1 = null ;
     RadioGroup note2 = null;
     RadioGroup note3 = null;
-    EditText editTicket = null;
-    EditText editEmail = null;
+    String ticket;
+    String email;
 
 
     @Override
@@ -43,7 +43,7 @@ public class unVote extends AppCompatActivity {
         spinnerVote1 = (Spinner) findViewById(R.id.vote1);
         spinnerVote2 = (Spinner) findViewById(R.id.vote2);
         spinnerVote3 = (Spinner) findViewById(R.id.vote3);
-        btnVote = (Button) findViewById(R.id.btnVote);
+        btnVote = (Button) findViewById(R.id.valide);
         note1 = (RadioGroup)findViewById(R.id.note1);
         note2 = (RadioGroup)findViewById(R.id.note2);
         note3 = (RadioGroup)findViewById(R.id.note3);
@@ -51,67 +51,71 @@ public class unVote extends AppCompatActivity {
         chargerSpinner();
 
         Intent i = getIntent();
-        String ticket = i.getStringExtra("ticket");
-        String email = i.getStringExtra("email");
+        ticket = i.getStringExtra("ticket");
+        email = i.getStringExtra("email");
     }
-    public void chargerSpinner() {
-        bdd = new ConcoursDAO(this);
-        Cursor cursorTous = bdd.toutLesId();
-        lesId.clear();
-        for (cursorTous.moveToFirst(); !cursorTous.isAfterLast(); cursorTous.moveToNext()) {
-            @SuppressLint("Range")
-            String id = cursorTous.getString(cursorTous.getColumnIndex("id"));
-            lesId.add(id);
-        }
-        spinnerVote1.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lesId));
-        spinnerVote2.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lesId));
-        spinnerVote3.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lesId));
-    };
+
 
     public View.OnClickListener EcouteurBouton = new View.OnClickListener() {
         @Override
         public void onClick(View view){
             switch (view.getId()) {
-                case R.id.btnVote:
-                    String ticket = editTicket.getText().toString();
-                    String email = editEmail.getText().toString();
-                    int vote1 = 0;
-                    int vote2 = 0;
-                    int vote3 = 0;
+                case R.id.valide:
+                    int vote1=0;
+                    int vote2=0;
+                    int vote3=0;
+                    switch (note1.getCheckedRadioButtonId()){
+                        case R.id.note1_un:
+                            vote1 = 1;
+                            break;
+                        case R.id.note1_deux:
+                            vote1=2;
+                            break;
+                        case R.id.note1_trois:
+                            vote1=3;
+                            break;
+                        case R.id.note1_quatre:
+                            vote1=4;
+                            break;
+                        case R.id.note1_cinq:
+                            vote1=5;
+                            break;
+                    }
+                    switch (note2.getCheckedRadioButtonId()){
+                        case R.id.note2_un:
+                            vote2 = 1;
+                            break;
+                        case R.id.note2_deux:
+                            vote2=2;
+                            break;
+                        case R.id.note2_trois:
+                            vote2=3;
+                            break;
+                        case R.id.note2_quatre:
+                            vote2=4;
+                            break;
+                        case R.id.note2_cinq:
+                            vote2=5;
+                            break;
+                    }
+                    switch (note3.getCheckedRadioButtonId()){
+                        case R.id.note3_un:
+                            vote3 = 1;
+                            break;
+                        case R.id.note3_deux:
+                            vote3 =2;
+                            break;
+                        case R.id.note3_trois:
+                            vote3 =3;
+                            break;
+                        case R.id.note3_quatre:
+                            vote3 =4;
+                            break;
+                        case R.id.note3_cinq:
+                            vote3 =5;
+                            break;
+                    }
 
-                    if (note1.getCheckedRadioButtonId() == R.id.vote1)
-                        vote1 = 1;
-                    else if (note1.getCheckedRadioButtonId() == R.id.vote1)
-                        vote1 = 2;
-                    else if (note1.getCheckedRadioButtonId() == R.id.vote1)
-                        vote1 = 3;
-                    else if (note1.getCheckedRadioButtonId() == R.id.vote1)
-                        vote1 = 4;
-                    else
-                        vote1 = 5;
-
-
-                    if (note2.getCheckedRadioButtonId() == R.id.note2)
-                        vote2 = 1;
-                    else if (note2.getCheckedRadioButtonId() == R.id.note2)
-                        vote2 = 2;
-                    else if (note2.getCheckedRadioButtonId() == R.id.note2)
-                        vote2 = 3;
-                    else if (note2.getCheckedRadioButtonId() == R.id.note2)
-                        vote2 = 4;
-                    else
-                        vote2 = 5;
-
-                    if (note3.getCheckedRadioButtonId() == R.id.note3)
-                        vote3 = 1;
-                    else if (note3.getCheckedRadioButtonId() == R.id.note3)
-                        vote3 = 2;
-                    else if (note3.getCheckedRadioButtonId() == R.id.note3)
-                        vote3 = 3;
-                    else if (note3.getCheckedRadioButtonId() == R.id.note3)
-                        vote3 = 4;
-                    else
-                        vote3 = 5;
 
                     String Id_rea1 = spinnerVote1.getSelectedItem().toString();
                     String Id_rea2 = spinnerVote2.getSelectedItem().toString();
@@ -122,6 +126,7 @@ public class unVote extends AppCompatActivity {
                         AlertDialog.Builder alert = new AlertDialog.Builder(unVote.this);
                         alert.setTitle("Info");
                         alert.setMessage("Vos votes ont bien été pris en compte");
+                        Toast.makeText(unVote.this, "erreur", Toast.LENGTH_SHORT).show();
                         alert.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -136,8 +141,11 @@ public class unVote extends AppCompatActivity {
                     Vote v = new Vote();
                     v.setCode(ticket);
                     v.setEmail(email);
+                    v.setId1(Id_rea1);
                     v.setVote1(vote1);
+                    v.setId2(Id_rea2);
                     v.setVote2(vote2);
+                    v.setId3(Id_rea3);
                     v.setVote3(vote3);
                     bdd = new ConcoursDAO(unVote.this);
                     bdd.ajouterVote(v);
@@ -153,5 +161,17 @@ public class unVote extends AppCompatActivity {
         }
         return true;
     }
-
+    public void chargerSpinner() {
+        bdd = new ConcoursDAO(this);
+        Cursor cursorTous = bdd.toutLesId();
+        lesId.clear();
+        for (cursorTous.moveToFirst(); !cursorTous.isAfterLast(); cursorTous.moveToNext()) {
+            @SuppressLint("Range")
+            String id = cursorTous.getString(cursorTous.getColumnIndex("id"));
+            lesId.add(id);
+        }
+        spinnerVote1.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lesId));
+        spinnerVote2.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lesId));
+        spinnerVote3.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lesId));
+    }
 }

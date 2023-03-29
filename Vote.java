@@ -3,6 +3,7 @@ package com.example.gedimagination;
 public class Vote {
     private String code;
     private String email;
+    private String date;
     private String id1;
     private int vote1;
     private String id2;
@@ -13,6 +14,7 @@ public class Vote {
     public Vote(){
         this.code="";
         this.email="";
+        this.date="";
         this.id1="";
         this.vote1=0;
         this.id2="";
@@ -24,6 +26,8 @@ public class Vote {
     public String getCode(){return this.code;}
 
     public String getEmail(){return this.email;}
+
+    public String getDate(){return this.date;}
 
     public String getId1() {
         return id1;
@@ -46,6 +50,10 @@ public class Vote {
     public void setCode(String code){this.code=code;}
 
     public void setEmail(String email){this.email=email;}
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public  void setId1(String id1){this.id1=id1;}
 

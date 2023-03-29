@@ -25,6 +25,7 @@ import cz.msebera.android.httpclient.Header;
 public class MainActivity extends AppCompatActivity {
     private Button btnImporter = null;
     private Button btnExport = null;
+    private Button btnVoter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
         btnImporter = (Button) findViewById(R.id.btnImporter);
         btnExport = (Button) findViewById(R.id.btnExporter);
+        btnVoter = (Button) findViewById(R.id.btnVoter);
 
         btnImporter.setOnClickListener(EcouteurBouton);
         btnExport.setOnClickListener(EcouteurBouton);
+        btnVoter.setOnClickListener(EcouteurBouton);
 
         Date actuel = Calendar.getInstance().getTime();
         Date debut = new Date(122, 11, 15);
@@ -49,6 +52,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
+                case R.id.btnVoter:
+                    Log.i("case VOter","ok");
+                    Intent Connexion = new Intent(MainActivity.this, Connexion.class);
+                    startActivity(Connexion);
+                    break;
                 case R.id.btnImporter:
                     // Requête HTTP GET
                     String urlI = "http://10.0.2.2/projet/PHPprojet/realisation.php";
@@ -79,11 +87,11 @@ public class MainActivity extends AppCompatActivity {
                                     R.setDescription(description);
                                     R.setDebut(debut);
                                     R.setFin(fin);
+                                    R.setNbGaime(0);
 
                                     Log.i("info", R.toString());
                                     bdd.ajouterRealisation(R);
-                                    Intent Connexion = new Intent(MainActivity.this, Connexion.class);
-                                    startActivity(Connexion);
+
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
@@ -100,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Echec de l'importation", Toast.LENGTH_LONG).show();
                         }
                     });
+                    break;
             }
         }
     };

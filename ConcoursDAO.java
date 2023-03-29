@@ -29,6 +29,7 @@ public class ConcoursDAO {
             v.put("description", r.getDescription());
             v.put("debut",r.getDebut());
             v.put("fin", r.getFin());
+            v.put("nbGaime",r.getNbGaime());
 
             // ajout du concurrent dans la table
             maBase.insert("Realisation", null, v);
@@ -39,6 +40,7 @@ public class ConcoursDAO {
 
         c.put("code", v.getCode());
         c.put("email", v.getEmail());
+        c.put("date", v.getDate());
         c.put("id1", v.getId1());
         c.put("vote1",v.getVote1());
         c.put("id2",v.getId2());
@@ -52,5 +54,14 @@ public class ConcoursDAO {
     public Cursor toutLesId(){
         Cursor curseurId = maBase.rawQuery("SELECT id FROM Realisation", new String[] {});
         return curseurId;
+    }
+
+    public Cursor classement(){
+        Cursor classement = maBase.rawQuery("SELECT id, titre, nbGaime FROM Realisation ORDER BY nbGaime DESC", new String[] {});
+        return classement;
+    }
+
+    public void ajoutGaime(String id, Integer gaime){
+        maBase.execSQL("UPDATE Realisation SET nbGaime = nbGaime +" + gaime + " WHERE id =" + id + " ");
     }
 }

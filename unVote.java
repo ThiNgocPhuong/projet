@@ -21,6 +21,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class unVote extends AppCompatActivity {
     private ConcoursDAO bdd;
@@ -64,6 +65,7 @@ public class unVote extends AppCompatActivity {
                     int vote1=0;
                     int vote2=0;
                     int vote3=0;
+                    String date= Calendar.getInstance().getTime().toString();
                     switch (note1.getCheckedRadioButtonId()){
                         case R.id.note1_un:
                             vote1 = 1;
@@ -138,9 +140,11 @@ public class unVote extends AppCompatActivity {
                         alert.show();
                     }
 
+
                     Vote v = new Vote();
                     v.setCode(ticket);
                     v.setEmail(email);
+                    v.setDate(date);
                     v.setId1(Id_rea1);
                     v.setVote1(vote1);
                     v.setId2(Id_rea2);
@@ -149,8 +153,12 @@ public class unVote extends AppCompatActivity {
                     v.setVote3(vote3);
                     bdd = new ConcoursDAO(unVote.this);
                     bdd.ajouterVote(v);
+                    bdd.ajoutGaime(Id_rea1, vote1);
+                    bdd.ajoutGaime(Id_rea2, vote2);
+                    bdd.ajoutGaime(Id_rea3, vote3);
                     log.i("Info", v.toString());
                     break;
+
             }
         }
     };
@@ -174,4 +182,5 @@ public class unVote extends AppCompatActivity {
         spinnerVote2.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lesId));
         spinnerVote3.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lesId));
     }
+
 }

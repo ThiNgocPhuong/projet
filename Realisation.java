@@ -6,6 +6,7 @@ public class Realisation {
     private String description;
     private String debut;
     private String fin;
+    private int nbGaime;
 
 
     public Realisation() {
@@ -34,7 +35,10 @@ public class Realisation {
         return fin;
     }
 
-    
+    public int getNbGaime() {
+        return nbGaime;
+    }
+
     public void setId(String id) {
         this.id=id;
     }
@@ -51,9 +55,9 @@ public class Realisation {
 
     public void setFin(String fin){this.fin=fin;}
 
-    /*public void setGM(int GM){
-        this.GM=GM;
-    }*/
+    public void setNbGaime(int nbGaime) {
+        this.nbGaime = nbGaime;
+    }
 
     @Override
     public String toString() {
@@ -62,7 +66,8 @@ public class Realisation {
                 ", titre='" + titre+ '\'' +
                 ", description='" + description +'\'' +
                 ", debut='" + debut + '\'' +
-                ", fin='" + fin +
+                ", fin='" + fin + '\'' +
+                ", nbGaime'" + nbGaime +
                 '}';
     }
 }

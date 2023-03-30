@@ -1,8 +1,8 @@
 <?php
     function connexionBase(){
         $hote='mysql:host=localhost;port=3306;dbname=gedimagination';
-        $user='ANTONOVA';
-        $pass='Buba123';
+        $user='Gestion';
+        $pass='Ger@ant2023';
         try {
             $connexion= new PDO($hote, $user, $pass);
             $connexion->exec("set name utf8");
@@ -23,20 +23,21 @@
         }
     }
 
-    function DAL_InsertSQLiteDatabase(){
+    function DAL_UpdateRealisation($id_realisation, $nbGaime){
        try{
+        //echo $id_realisation;
+        //echo $nbGaime;
         $connexion = connexionBase();
-        $request = 'INSERT INTO Realisation (id, titre, description, debut, fin) VALUES (:id_realisation, :titre_realisation, :description_realisation, :date_debut_realisation, :date_fin_realisation) ';
+        $request = 'UPDATE Realisation SET nbGaime = :nbGaime WHERE id_realisation = :id';
         $prep = $connexion->prepare($request);
-        $prep->bindValue(':id_realisation','id', PDO::PARAM_STR);
-        $prep->bindValue(':titre_realisation', 'titre', PDO::PARAM_STR);
-        $prep->bindValue(':description_realisation', 'description', PDO::PARAM_STR);
-        $prep->bindValue(':date_debut_realisation', 'debut', PDO::PARAM_STR);
-        $prep->bindValue(':date_fin_realisation','fin', PDO::PARAM_STR);
+        $prep->bindValue(':id',$id_realisation, PDO::PARAM_INT);
+        $prep->bindValue(':nbGaime', $nbGaime, PDO::PARAM_INT);
+        
         $ok = $prep->execute();
+        echo $ok;
         return $prep->rowCount();
-       } catch(Exception $e) {
-        throw new Exception("DAL_insertSQLiteDatabase" .$e->getMessage());  
+       } catch(PDOException $e) {
+        throw new Exception("DAL_UpdateRealisation" .$e->getMessage());  
         //return $e->getMessage();
        }
     }

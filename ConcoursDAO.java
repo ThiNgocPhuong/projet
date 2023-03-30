@@ -56,12 +56,17 @@ public class ConcoursDAO {
         return curseurId;
     }
 
+    public Cursor toutRea(){
+        Cursor curseurRea = maBase.rawQuery("SELECT id,titre,description,debut,fin,nbGaime FROM Realisation", new String[]{});
+        return curseurRea;
+    }
+
     public Cursor classement(){
         Cursor classement = maBase.rawQuery("SELECT id, titre, nbGaime FROM Realisation ORDER BY nbGaime DESC", new String[] {});
         return classement;
     }
 
     public void ajoutGaime(String id, Integer gaime){
-        maBase.execSQL("UPDATE Realisation SET nbGaime = nbGaime +" + gaime + " WHERE id =" + id + " ");
+        maBase.execSQL("UPDATE Realisation SET nbGaime = nbGaime +" + gaime + "  WHERE id =" + id + " ");
     }
 }

@@ -7,7 +7,7 @@
     $servername = 'localhost';
     $user = 'Gestion';
     $password = 'Ger@ant2023';
-    $dbname = "gedimagination1";
+    $dbname = "gedimagination";
 
     $conn = new PDO('mysql:dbname='.$dbname.';host='.$servername.';port=3306', $user,$password);
 

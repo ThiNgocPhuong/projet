@@ -7,11 +7,11 @@
 <?php
     //connexion à la database
     $user="Participation";
-    $pass="C0nc0urs";
+    $pass="C0nc0urs*";
 
     //variable message - pour l'afficher
     $mes="";
-    $email="oble@gmail.com";
+    $email="alcool@gmail.com";
 
     //Vérification si le formulaire a été soumis
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -29,7 +29,7 @@
 
             //Vérification de la taille de la photo (max 10Mo)
             $maxsize = 9 * 2048 * 1536;
-            if($filesize > $maxsize) die("Error : La taille du fichier est supérieure à la taille autorisée.");
+            if($filesize > $maxsize) die($mes="Error : La taille du fichier est supérieure à la taille autorisée.");
 
             $exten=substr($filetype,6); 
             $filename=uniqid();
@@ -56,20 +56,43 @@
     {
         $objetPDO= new PDO('mysql:host=localhost;dbname=gedimagination', $user, $pass);
 
-        //préparation de la requête
-        $requete=$objetPDO->prepare('INSERT INTO Realisation ( titre_realisation,description_realisation, date_debut_realisation, date_fin_realisation, date_participation, photo, email)  VALUES ( :titre, :description, :debut, :fin, :date, :chemin, :email_participant)');
 
+        //préparation de la reqête SELECT
+        $pdoStat = $objetPDO->prepare('SELECT count(id_realisation) as "nb_mail" from Realisation where email= :email_participant' );
+        $pdoStat->bindValue(":email_participant",$email,PDO::PARAM_STR);
+        $pdoStat->execute();
+        $res = $pdoStat->fetch(PDO::FETCH_ASSOC);
+
+        $requestU = $objetPDO->prepare('INSERT INTO Utilisateur( email ) VALUES (:email_participant)');
+        $requestU->bindValue(':email_participant',$email,PDO::PARAM_STR);
+        $requestU->execute();
+
+        //préparation de la requête
+        $requete='INSERT INTO Realisation ( titre_realisation,description_realisation, date_debut_realisation, date_fin_realisation, date_participation, photo, email ) 
+        VALUES ( :titre, :description, :debut, :fin, :date, :chemin, :email_participant)';
+        $prep = $objetPDO->prepare($requete);
+
+        var_dump($_POST['titre']);
+        var_dump($_POST['description']);
+        var_dump($_POST['debut']);
+        var_dump($_POST['fin']);
+        var_dump(date("Y-m-d"));
+        var_dump($nom_fichier);
+        var_dump($email);
         //liaison de chaque valeur
-        $requete->bindValue(':titre', $_POST['titre'], PDO::PARAM_STR);
-        $requete->bindValue(':description', $_POST['description'], PDO::PARAM_STR);
-        $requete->bindValue(':debut', $_POST['debut'], PDO::PARAM_STR);
-        $requete->bindValue(':fin', $_POST['fin'], PDO::PARAM_STR);
-        $requete->bindValue(':date', date("Y-m-d"));  
-        $requete->bindValue(':chemin','\www\projet\photos\\' .$nom_fichier, PDO::PARAM_STR);
-        $requete->bindValue(':email_participant',$email,PDO::PARAM_STR);
+        $prep->bindValue(':titre', $_POST['titre'], PDO::PARAM_STR);
+        $prep->bindValue(':description', $_POST['description'], PDO::PARAM_STR);
+        $prep->bindValue(':debut', $_POST['debut'], PDO::PARAM_STR);
+        $prep->bindValue(':fin', $_POST['fin'], PDO::PARAM_STR);
+        $prep->bindValue(':date', date("Y-m-d"));  
+        $prep->bindValue(':chemin','\www\projet\photos\\' .$nom_fichier, PDO::PARAM_STR);
+        $prep->bindValue(':email_participant',$email,PDO::PARAM_STR); 
+        
+        
 
         //exécution de la requette préparer
-        $insertValid = $requete->execute();
+        $insertValid = $prep->execute();
+        var_dump($insertValid);
 
         if($insertValid)
         {
@@ -77,6 +100,7 @@
         }
         else
         {
+            
             $message = 'L\'envoi de votre formulaire a échoué.';
         }
     }

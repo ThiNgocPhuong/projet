@@ -85,7 +85,7 @@
         $prep->bindValue(':debut', $_POST['debut'], PDO::PARAM_STR);
         $prep->bindValue(':fin', $_POST['fin'], PDO::PARAM_STR);
         $prep->bindValue(':date', date("Y-m-d"));  
-        $prep->bindValue(':chemin','\www\projet\photos\\' .$nom_fichier, PDO::PARAM_STR);
+        $prep->bindValue(':chemin','photos\\' .$nom_fichier, PDO::PARAM_STR);
         $prep->bindValue(':email_participant',$email,PDO::PARAM_STR); 
         
         

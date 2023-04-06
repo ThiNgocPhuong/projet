@@ -29,7 +29,7 @@ public class ConcoursDAO {
             v.put("description", r.getDescription());
             v.put("debut",r.getDebut());
             v.put("fin", r.getFin());
-            v.put("nbGaime",r.getNbGaime());
+            v.put("nbGaime",0);
 
             // ajout du concurrent dans la table
             maBase.insert("Realisation", null, v);
@@ -57,7 +57,7 @@ public class ConcoursDAO {
     }
 
     public Cursor toutRea(){
-        Cursor curseurRea = maBase.rawQuery("SELECT id,titre,description,debut,fin,nbGaime FROM Realisation", new String[]{});
+        Cursor curseurRea = maBase.rawQuery("SELECT id,nbGaime FROM Realisation", new String[]{});
         return curseurRea;
     }
 

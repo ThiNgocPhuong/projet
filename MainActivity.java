@@ -85,13 +85,14 @@ public class MainActivity extends AppCompatActivity {
                                     String debut = response.getJSONObject(i).getString("date_debut_realisation");
                                     String fin = response.getJSONObject(i).getString("date_fin_realisation");
 
+
                                     Realisation R = new Realisation();
                                     R.setId(id);
                                     R.setTitre(titre);
                                     R.setDescription(description);
                                     R.setDebut(debut);
                                     R.setFin(fin);
-                                    R.setNbGaime(0);
+
 
                                     Log.i("info", R.toString());
                                     bdd.ajouterRealisation(R);
@@ -140,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
                         String urlE = "http://10.0.2.2/projet/PHPprojet/realisation.php";
                         AsyncHttpClient requestE = new AsyncHttpClient();
                         try {
+                            Log.i("try","ok");
                             StringEntity entity = new StringEntity(fluxJSON.toString());
                             requestE.put(MainActivity.this, urlE, entity, "application/json", new AsyncHttpResponseHandler() {
                                 @Override

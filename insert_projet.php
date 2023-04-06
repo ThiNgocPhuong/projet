@@ -72,13 +72,13 @@
         VALUES ( :titre, :description, :debut, :fin, :date, :chemin, :email_participant)';
         $prep = $objetPDO->prepare($requete);
 
-        var_dump($_POST['titre']);
+        /*var_dump($_POST['titre']);
         var_dump($_POST['description']);
         var_dump($_POST['debut']);
         var_dump($_POST['fin']);
         var_dump(date("Y-m-d"));
         var_dump($nom_fichier);
-        var_dump($email);
+        var_dump($email);*/
         //liaison de chaque valeur
         $prep->bindValue(':titre', $_POST['titre'], PDO::PARAM_STR);
         $prep->bindValue(':description', $_POST['description'], PDO::PARAM_STR);

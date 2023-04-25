@@ -8,8 +8,8 @@
             case 'GET':
                 getRealisation();
                 break;
-            case 'PUT':
-                putRealisation();
+            case 'Update':
+                updateRealisation();
                 break;
             default:
 				http_response_code(405);

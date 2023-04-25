@@ -8,8 +8,8 @@
             case 'GET':
                 getRealisation();
                 break;
-            case 'PUT':
-                putRealisation();
+            case 'Update':
+                updateRealisation();
                 break;
             default:
 				http_response_code(405);
@@ -27,30 +27,35 @@
 		$lesRealisation = DAL_getRealisation();
 		echo json_encode($lesRealisation);
 	}
-    function putRealisation()
+    function updateRealisation()
     {
 
         $json =  file_get_contents('php://input');
         $errJson=true;
         if(!empty($json)){
+            //echo "if 1";
             $obj = json_decode($json);
-            if (property_exists($obj,"Realisation"))
+          if (property_exists($obj,"Realisation"))
             {
-                $res = $obj->Reaisation;
+                //echo "if 2";
+                $res = $obj->Realisation;
                 $errUpdate = false;
+                $messageInfo = "";
                 foreach($res as $uneRealisation)
                 {
+                    //echo "foreach";
                     if(property_exists($uneRealisation,"id_realisation")&& 
-                    property_exists($uneRealisation,"titre_realisation")&&
-                    property_exists($uneRealisation,"description_realisaton"))
+                    property_exists($uneRealisation,"nbGaime"))
                     {
+                        //echo "if 3";
                         $id = $uneRealisation->id_realisation;
-                        $titre = $uneRealisation->titre_realisation;
-                        $description = $uneRealisation->description_realisation;
-                        $retourUpdate = DAL_InsertSQLiteDatabase($id,$titre,$description);
+                       
+                        $nbGaime = $uneRealisation->nbGaime;
+                        $retourUpdate = DAL_UpdateRealisation($id,$nbGaime);
+                        echo $retourUpdate;
                         if($retourUpdate == 1)
                         {
-                            $message .= "Realisation" .$id. "ajouter avec succès.";
+                            $messageInfo .= "Realisation" .$id. "ajouter avec succès.";
                         }
                         $errJson=false;
                     }

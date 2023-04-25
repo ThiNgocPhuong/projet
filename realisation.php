@@ -27,7 +27,7 @@
 		$lesRealisation = DAL_getRealisation();
 		echo json_encode($lesRealisation);
 	}
-    function putRealisation()
+    function updateRealisation()
     {
 
         $json =  file_get_contents('php://input');

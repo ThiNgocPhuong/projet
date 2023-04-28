@@ -1,0 +1,30 @@
+/*
+    ANTONOVA & SAM le 06/04/2022
+    style_resultats.css
+    CSS pour les résultats du classement du projet de Ged'Imagination
+*/
+*{
+    text-align: center;
+}
+
+body
+{
+    background-image: url(back3.jpg);
+    background-size: cover;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#tableau{
+    margin-left: 97px;
+}
+
+table{
+    border-collapse: collapse;
+  }
+  
+  th, td{
+    border: 2px solid black;
+    padding: 15px;
+    width: 300px;
+}
+

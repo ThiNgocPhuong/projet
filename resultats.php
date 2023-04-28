@@ -14,8 +14,14 @@
 
     //Requête SQL pour récuperer les données
     $result = $conn->prepare("SELECT titre_realisation, description_realisation, nbGaime FROM realisation ORDER BY nbGaime DESC");
+    
 
-    $validRes = $result->execute();      
+    $validRes = $result->execute();     
+    
+    $sql = "SELECT id_realisation, photo FROM Realisation";
+
+    $resultat = $conn->prepare($sql);
+    $estValide = $resultat->execute();
 ?>
 
 <!DOCTYPE html>
@@ -28,22 +34,25 @@
     <body>
         <div class = "conteneur">
             <h1>Classement</h1>
+            <div id = "tableau">
             <?php
                 //echo $validRes;
                 //var_dump($result);
-                if($tmp = $result->fetchAll()){
+                if($tmp = $result->fetchAll() ){
+                    $resultats = $resultat->fetchAll();
                 //if ($result->num_rows > 0) {
-                        echo "<table><thead><tr><th>Place</th><th>Titre</th><th>Description</th><th>Nombre de Gaimes</th></tr></thead><tbody>";
+                        echo "<table><thead><tr><th>Place</th><th>Titre</th><th>Description</th><th>Nombre de Gaimes</th><th>Photo</th></tr></thead><tbody>";
                         $i = 0;
                     //while($row = $result->fetch_assoc()) {
                         foreach($tmp as $row){
                         $i++;
-                        echo "<tr><td>" . $i . "</td><td>" . $row["titre_realisation"] . "</td><td>" . $row["description_realisation"] . "</td><td>" . $row["nbGaime"] ."</td></tr>";
+                        echo "<tr><td>" . $i . "</td><td>" . $row["titre_realisation"] . "</td><td>" . $row["description_realisation"] . "</td><td>" . $row["nbGaime"] ."</td><td> <img src='" . $row['photo'] . "'/></td></tr>";
                     }
                     echo "</tbody></table>";
                 } else {
                     echo "Aucun résultat trouvé.";
                 }
+                
 
             ?>
         </div>

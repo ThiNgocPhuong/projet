@@ -21,7 +21,7 @@
                 <!--Titre de réalisation-->
                     <div id="titre">
                         <label for="titre">Titre </label> <br>
-                        <input type="text" name="titre" id="titre" placeholder="Veuillez écrire le titre de votre réalisation" pattern="^[\w\s\W]{5,10}$" required>
+                        <input type="text" name="titre" id="titre" placeholder="Veuillez écrire le titre de votre réalisation" pattern="^[\w\s\W]{5,50}$" required>
                     </div>
                     <!--Description de réalisation-->
                     <div id="description">
@@ -62,7 +62,7 @@
             </form>
         </div>
     </body>
-    <script src="./poids_photo.js"></script>
+    
 </html>
 
 

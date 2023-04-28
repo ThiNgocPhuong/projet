@@ -13,7 +13,7 @@
 
 
     //Requête SQL pour récuperer les données
-    $result = $conn->prepare("SELECT titre_realisation, description_realisation, nbGaime FROM realisation ORDER BY nbGaime DESC");
+    $result = $conn->prepare("SELECT titre_realisation, description_realisation, nbGaime FROM Realisation ORDER BY nbGaime DESC");
     
 
     $validRes = $result->execute();     

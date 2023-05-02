@@ -88,5 +88,5 @@ create user Gestion IDENTIFIED BY "Ger@ant2023";
 grant select, insert on gedimagination.Utilisateur to Gestion;
 grant select, insert on gedimagination.Parametre_Concours to Gestion;
 grant select on gedimagination.Realisation to Gestion;
-GRANT UPDATE ON realisation TO Gestion;
+GRANT UPDATE ON gedimagination.realisation TO Gestion;
 

@@ -8,8 +8,8 @@
             case 'GET':
                 getRealisation();
                 break;
-            case 'Update':
-                updateRealisation();
+            case 'PUT':
+                putRealisation();
                 break;
             default:
 				http_response_code(405);
@@ -27,7 +27,7 @@
 		$lesRealisation = DAL_getRealisation();
 		echo json_encode($lesRealisation);
 	}
-    function updateRealisation()
+    function putRealisation()
     {
 
         $json =  file_get_contents('php://input');

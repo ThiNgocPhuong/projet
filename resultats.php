@@ -13,15 +13,14 @@
 
 
     //Requête SQL pour récuperer les données
-    $result = $conn->prepare("SELECT titre_realisation, description_realisation, nbGaime FROM Realisation ORDER BY nbGaime DESC");
+    $result = $conn->prepare("SELECT titre_realisation, description_realisation, nbGaime, photo FROM Realisation ORDER BY nbGaime DESC");
     
 
     $validRes = $result->execute();     
     
-    $sql = "SELECT id_realisation, photo FROM Realisation";
 
-    $resultat = $conn->prepare($sql);
-    $estValide = $resultat->execute();
+   
+
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +38,7 @@
                 //echo $validRes;
                 //var_dump($result);
                 if($tmp = $result->fetchAll() ){
-                    $resultats = $resultat->fetchAll();
+                    
                 //if ($result->num_rows > 0) {
                         echo "<table><thead><tr><th>Place</th><th>Titre</th><th>Description</th><th>Nombre de Gaimes</th><th>Photo</th></tr></thead><tbody>";
                         $i = 0;
@@ -58,4 +57,3 @@
         </div>
     </body>
 </html>
-

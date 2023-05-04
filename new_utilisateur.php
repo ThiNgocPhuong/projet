@@ -44,7 +44,7 @@
             <!-- Affiche le message de reussite ou echec -->
             <h1>Confirmation de l'inscription</h1>
             <!-- Affichage des messages appelés -->
-            <p><?php echo $mes;  echo $pass;?></p>
+            <p><?php echo $mes;?></p>
             <!-- Bouton qui retourne vers la page du formulaire -->
             <div id="bouton" class="bouton">
                     <a href="formulaire_photo.php" >

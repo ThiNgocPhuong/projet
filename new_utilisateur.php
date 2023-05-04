@@ -4,14 +4,26 @@
     $mes="";
 
     try{
+        // Clé de chiffrement aléatoire
+        $cleDeChiffrement = random_bytes(32);
+
         $objPDO=new PDO('mysql:dbname='.BDD.';host='.HOST.';port='.PORT,LOGIN,PASSW);
 
         $request = $objPDO->prepare('INSERT INTO Utilisateur ( nom, prenom, email, mdp) 
         Values (:nom, :prenom, :email, :mdp)');
 
-        $request->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
-        $request->bindValue(':prenom', $_POST['prenom'], PDO::PARAM_STR);
-        $request->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
+        $nom=$_POST['nom'];
+        $prenom=$_POST['prenom'];
+        $email=$_POST['email'];
+
+        $iv = random_bytes(openssl_cipher_iv_length('AES-256-CBC'));
+        $crypNom=openssl_encrypt($nom, 'AES-256-CBC', $cleDeChiffrement, OPENSSL_RAW_DATA, $iv);
+        $crypPrenom=openssl_encrypt($prenom, 'AES-256-CBC', $cleDeChiffrement, OPENSSL_RAW_DATA, $iv);
+        $crypEmail=openssl_encrypt($prenom, 'AES-256-CBC', $cleDeChiffrement, OPENSSL_RAW_DATA, $iv);
+
+        $request->bindValue(':nom',  $crypNom, PDO::PARAM_STR);
+        $request->bindValue(':prenom', $crypPrenom, PDO::PARAM_STR);
+        $request->bindValue(':email',  $crypEmail, PDO::PARAM_STR);
         $pass= password_hash($_POST['mdp'],PASSWORD_DEFAULT);
         $request->bindValue(':mdp', $pass, PDO::PARAM_STR);
 

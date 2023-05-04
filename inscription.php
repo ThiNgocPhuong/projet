@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="style.css" rel="stylesheet" type="text/css">
+        <link href="style_inscription.css" rel="stylesheet" type="text/css">
         <title>Inscription</title>
     </head>
     <body>
@@ -15,7 +15,7 @@
                     <label for="nom">Nom</label>
                     <input type="text" name="nom" id="nom"  placeholder="Veuillez saisir votre nom" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" require>
                 </div>
-                <div id="nom">
+                <div id="prenom">
                     <label for="prenom">Prénom</label>
                     <input type="text" name="prenom" id="prenom"  placeholder="Veuillez saisir votre prénom" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" require>
                 </div>
@@ -34,4 +34,3 @@
         </div>
     </body>
 </html>
-

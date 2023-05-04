@@ -11,7 +11,7 @@
         <div id="conteneur">
             <h1>Connexion</h1>
             <div id="identifiant">
-                <label for="identifiant"> Identifiant</label>
+                <label for="identifiant">E-mail</label>
                 <input type="text" name="identifiant" id="identifiant" placeholder="Veuillez saisir votre identifiant" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" required>
             </div>
             <div id="mdp">

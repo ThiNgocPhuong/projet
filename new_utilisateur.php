@@ -46,8 +46,8 @@
             <p><?php echo $mes ?></p>
             <!-- Bouton qui retourne vers la page du formulaire -->
             <div id="bouton" class="bouton">
-                    <a href="formulaire.php" >
-                        <button>Retour</button>
+                    <a href="formulaire_photo.php" >
+                        <button>Participer</button>
                     </a>
             </div>
         </div>

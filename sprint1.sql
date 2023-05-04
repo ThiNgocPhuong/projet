@@ -5,7 +5,7 @@ CREATE TABLE Utilisateur
     nom VARCHAR(25),
     prenom VARCHAR(25),
     email  VARCHAR(25) unique,
-    mdp VARCHAR(30),
+    mdp VARCHAR(100),
     CONSTRAINT pk_utilisateur PRIMARY KEY(email)
 );
 

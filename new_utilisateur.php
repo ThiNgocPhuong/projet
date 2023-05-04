@@ -1,22 +1,23 @@
 <?php
-    <include 'db.inc.projet.php';>
+    include 'db.inc.projet.php';
 
     $mes="";
 
     try{
         $objPDO=new PDO('mysql:dbname='.BDD.';host='.HOST.';port='.PORT,LOGIN,PASSW);
 
-        $request = $objPDO->prepare('INSERT INTO Utilisateur ( nom, prenom, email, mdp) Values (:nom, :prenom, :email, :mdp)');
+        $request = $objPDO->prepare('INSERT INTO Utilisateur ( nom, prenom, email, mdp) 
+        Values (:nom, :prenom, :email, :mdp)');
 
-        $request = bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
-        $request = bindValue(':prenom', $_POST['prenom'], PDO::PARAM_STR);
-        $request = bindValue(':email', $_POST['email'], PDO::PARAM_STR);
-        $request = bindValue(':mdp', $_POST['mdp'], PDO::PARAM_STR);
+        $request->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
+        $request->bindValue(':prenom', $_POST['prenom'], PDO::PARAM_STR);
+        $request->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
+        $request->bindValue(':mdp', $_POST['mdp'], PDO::PARAM_STR);
 
         $insertValid = $request->execute();
 
         if($insertValid){
-            $mes = 'Votre inscription a bien été pris en compte.'
+            $mes = 'Votre inscription a bien été pris en compte.';
         }
         else{
             $mes = 'Votre inscription n\'a pas été pris en compte.';

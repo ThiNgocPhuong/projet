@@ -20,7 +20,7 @@
                     <input type="text" name="prenom" id="prenom"  placeholder="Veuillez saisir votre prénom" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" require>
                 </div>
                 <div id="email">
-                    <label for="email">Adresse Mail</label>
+                    <label for="email">E-mail</label>
                     <input type="text" name="email" id="email" placeholder="Veuillez saisir votre adresse mail" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
                 </div>
                 <div id="mdp">

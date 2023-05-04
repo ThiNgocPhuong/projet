@@ -17,10 +17,10 @@
         $insertValid = $request->execute();
 
         if($insertValid){
-            $mes = 'Votre inscription a bien été pris en compte.';
+            $mes = 'Votre inscription a bien été prise en compte.';
         }
         else{
-            $mes = 'Votre inscription n\'a pas été pris en compte.';
+            $mes = 'Votre inscription n\'a pas été prise en compte.';
         }
     }catch(PDOException $e){
 

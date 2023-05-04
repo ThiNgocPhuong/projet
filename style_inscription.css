@@ -1,0 +1,114 @@
+/*
+    ANTONOVA & SAM le 04/05/2023
+    style_inscription.css
+    CSS pour la page d'inscription du projet de Ged'Imagination
+*/
+
+/* Le body avec une image derrière l'inscription' */
+body
+{
+    background-image: url(back3.jpg);
+    background-size: cover;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Le titre de l'inscription */
+h1
+{
+    text-align: center;
+    margin-top: 40px;
+    color: #000000;
+    text-decoration: underline;
+}
+
+/* Le conteneur de toute l'inscription */
+#conteneur
+{
+    border: 3px solid;
+    border-color: rgb(0, 0, 0);
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px 20px 20px 20px;
+    width: 45%;
+    background: #ffffff;
+    box-shadow: 8px 8px 20px #000000;  
+}
+
+/* Le nom, le prenom, le mail et mot de passe */
+div #nom, div #prenom, div #email, div #mdp
+{
+    font-size: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-weight: 100px;
+    text-align: left;
+}
+
+/* L'espace vide pour insérer le mot de passe */
+input[type=password]
+{
+    width: 96.5%;
+    box-sizing: border-box;
+    padding : 10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.3);
+    border-radius:10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Que les labels du conteneur */
+#conteneur label
+{
+    position: relative;
+    font-size: 115% ;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Le buton pour valider l'inscription' */
+.button
+{
+    font-size: 100px;
+}
+
+/* L'espace vide pour avoir la possibilité de remplir le titre de l'inscription */
+input[type=text]
+{
+    width: 96.5%;
+    box-sizing: border-box;
+    padding : 10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.3);
+    border-radius:10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+/* Buton pour envoyer l'inscription' */
+input[type=submit]
+{
+    background-color: #000000;
+    color:#ffffff;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+/* Le buton - quel effet a-t-il quand on mets la souris dessus */
+input[type=submit]:hover
+{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+
+
+

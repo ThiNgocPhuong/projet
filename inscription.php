@@ -28,7 +28,7 @@
                     <input type="password" name="mdp" id="mdp" placeholder="Veuillez saisir votre mot de passe" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{12,}$" required>
                 </div>
                 <div id="bouton" class="bouton">
-                    <input type="submit" value="Inscription !">
+                    <input type="submit" value="VALIDER">
                 </div>
             </form>
         </div>

@@ -16,7 +16,7 @@
             </div>
             <div id="mdp">
                 <label for="mdp">Mot de passe</label>
-                <input type="text" name="mdp" id="mdp" placeholder="Veuillez saisir votre mot de passe" pattern="/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/" required>
+                <input type="text" name="mdp" id="mdp" placeholder="Veuillez saisir votre mot de passe" pattern="/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{12,}$/" required>
             </div>
             <div id="bouton" class="bouton">
                 <input type="submit" value="Connexion !">

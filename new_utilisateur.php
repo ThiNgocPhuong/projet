@@ -12,7 +12,8 @@
         $request->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
         $request->bindValue(':prenom', $_POST['prenom'], PDO::PARAM_STR);
         $request->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
-        $request->bindValue(':mdp', $_POST['mdp'], PDO::PARAM_STR);
+        $pass= password_hash($_POST['mdp'],PASSWORD_DEFAULT);
+        $request->bindValue(':mdp', $pass, PDO::PARAM_STR);
 
         $insertValid = $request->execute();
 
@@ -43,7 +44,7 @@
             <!-- Affiche le message de reussite ou echec -->
             <h1>Confirmation de l'inscription</h1>
             <!-- Affichage des messages appelés -->
-            <p><?php echo $mes ?></p>
+            <p><?php echo $mes;  echo $pass;?></p>
             <!-- Bouton qui retourne vers la page du formulaire -->
             <div id="bouton" class="bouton">
                     <a href="formulaire_photo.php" >

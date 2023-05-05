@@ -15,7 +15,7 @@ body
 }
 
 #tableau{
-    margin-left: 97px;
+    margin-left: 140px;
 }
 
 table{
@@ -28,10 +28,22 @@ table{
     width: 300px;
 }
   
-  /* Style pour l'image */
-  #tableau td:nth-child(5) img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
+/* Style pour l'image */
+#tableau td:nth-child(5) img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Style pour les titres */
+th {
+  background-color: #1a53cea2; 
+  padding: 10px; 
+  text-align: center; 
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+
   

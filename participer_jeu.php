@@ -14,19 +14,24 @@
         <title>Participation au jeu</title>
     </head>
     <body>
-       
-        <div id="participation">
-            <h1>Allez y! <br> Faites nous voir votre réalisation.</h1>
-            <div id="message">
-               <p> <?php $message ?></p>
+        <form action='get.php' method='POST'>
+            <div id="participation">
+                <h1>Allez-y! <br> Faites nous voir votre réalisation.</h1>
+                <div id="participer" class="bouton" >
+                    <a href="formulaire_photo.php"> 
+                    <button id="bouton"> Participer au jeu </button> 
+                    </a>
+                </div>
+                <script src="./patern_periode.js"></script>
             </div>
-            <div id="participer" class="bouton" >
-                <a href="formulaire_photo.php"> 
-                  <button id="bouton"> Participer Au Jeu </button> 
+        </form>
+        <form action='resultat.php'>
+            <div id="classement" class="bouton">
+                <a href="resultat.php">
+                    <button id="btnClass"> Voir le classement </button> 
                 </a>
             </div>
-        </div>
+        </form>
     </body> 
-    <script src="./patern_periode.js"></script>
 
 </html>

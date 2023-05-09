@@ -1,10 +1,8 @@
 <?php
+    include '../db.inc.gestion.php';
     function connexionBase(){
-        $hote='mysql:host=localhost;port=3306;dbname=gedimagination';
-        $user='Gestion';
-        $pass='Ger@ant2023';
         try {
-            $connexion= new PDO($hote, $user, $pass);
+            $connexion = new PDO('mysql:dbname='.BDD.';host='.HOST.';port='.PORT,LOGIN,PASSW);
             $connexion->exec("set name utf8");
             return $connexion;
         }catch(PDOException $e){

@@ -4,6 +4,7 @@
     HTML/PHP pour le formulaire du projet de Ged'Imagination
 -->
 <?php
+    
     $servername = 'localhost';
     $user = 'Gestion';
     $password = 'Ger@ant2023';
@@ -13,7 +14,7 @@
 
 
     //Requête SQL pour récuperer les données
-    $result = $conn->prepare("SELECT titre_realisation, description_realisation, nbGaime, photo FROM Realisation ORDER BY nbGaime DESC Limit 3");
+    $result = $conn->prepare("SELECT titre_realisation, description_realisation, nbGaime, photo FROM Realisation ORDER BY nbGaime DESC ");
     
 
     $validRes = $result->execute();     

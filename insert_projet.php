@@ -5,9 +5,9 @@
 -->
 
 <?php
+    include 'db.inc.projet.php';
     //connexion à la database
-    $user="Participation";
-    $pass="C0nc0urs*";
+
 
     //variable message - pour l'afficher
     $mes="";
@@ -54,7 +54,7 @@
 
     try
     {
-        $objetPDO= new PDO('mysql:host=localhost;dbname=gedimagination', $user, $pass);
+        $objetPDO= new PDO('mysql:dbname='.BDD.';host='.HOST.';port='.PORT,LOGIN,PASSW);
 
 
         //préparation de la reqête SELECT

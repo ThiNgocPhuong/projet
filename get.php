@@ -1,15 +1,14 @@
 <?php
 
     //connexion à la base de données
-    $user = 'Participation';
-    $password = 'C0nc0urs';
+    include 'db.inc.projet.php';
 
-    $email="oble@gmail.com";
+    $email="alcoolm@gmail.com";
 
     try
 
     {
-        $objetPDO = new PDO ('mysql:host=localhost;dbname=gedimagination', $user, $password);
+        $objetPDO= new PDO('mysql:dbname='.BDD.';host='.HOST.';port='.PORT,LOGIN,PASSW);
 
         //préparation de la reqête SELECT
         $pdoStat = $objetPDO->prepare('SELECT count(id_realisation) as "nb_mail" from Realisation where email= :email_participant' );
@@ -17,9 +16,9 @@
         $pdoStat->execute();
         $res = $pdoStat->fetch(PDO::FETCH_ASSOC);
 
-        /*$requestU = $objetPDO->prepare('INSERT INTO ( email ) VALUES (:email_participant)');
+        $requestU = $objetPDO->prepare('INSERT INTO Utilisateur( email ) VALUES (:email_participant)');
         $requestU->bindValue(':email_participant',$email,PDO::PARAM_STR);
-        $requestU->execute();*/
+        $requestU->execute();
 
         //éxécution
         

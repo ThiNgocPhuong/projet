@@ -4,13 +4,9 @@
     HTML/PHP pour le formulaire du projet de Ged'Imagination
 -->
 <?php
+    include 'db.inc.gestion.php'
     
-    $servername = 'localhost';
-    $user = 'Gestion';
-    $password = 'Ger@ant2023';
-    $dbname = "gedimagination";
-
-    $conn = new PDO('mysql:dbname='.$dbname.';host='.$servername.';port=3306', $user,$password);
+    $objetPDO= new PDO('mysql:dbname='.BDD.';host='.HOST.';port='.PORT,LOGIN,PASSW);
 
 
     //Requête SQL pour récuperer les données
